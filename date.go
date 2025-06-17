@@ -107,5 +107,12 @@ func DecimalHour(h, m, s int) float64 {
 	S := float64(s) / 60.0
 	M := (float64(m) + S) / 60.0
 	return float64(h) + M
+}
 
+func DecimalHourToHourMinuteSecond(t float64) (int, int, int) {
+	T := int(t)
+	f := t - float64(T)
+	m := f * 60
+	s := (m - float64(int(m))) * 60
+	return T, int(m), int(s)
 }

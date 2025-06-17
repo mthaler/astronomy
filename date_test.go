@@ -31,3 +31,10 @@ func TestWeekday(t *testing.T) {
 func TestDecimalHour(t *testing.T) {
 	assert.Equal(t, 18.524166666666666, DecimalHour(18, 31, 27))
 }
+
+func TestDecimalHourToHourMinuteSecond(t *testing.T) {
+	h, m, s := DecimalHourToHourMinuteSecond(18.524167)
+	assert.Equal(t, 18, h)
+	assert.Equal(t, 31, m)
+	assert.Equal(t, 27, s)
+}

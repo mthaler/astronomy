@@ -16,5 +16,5 @@ func Easter(y int) (int, int) {
 	n := (h + l - 7*m + 114) / 31
 	p := (h + l - 7*m + 114) % 31
 
-	return n, p
+	return n, p + 1
 }

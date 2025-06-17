@@ -27,3 +27,7 @@ func TestDate(t *testing.T) {
 func TestWeekday(t *testing.T) {
 	assert.Equal(t, "Friday", Weekday(2009, 6, 19.75))
 }
+
+func TestDecimalHour(t *testing.T) {
+	assert.Equal(t, 18.524166666666666, DecimalHour(18, 31, 27))
+}

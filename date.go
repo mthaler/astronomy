@@ -102,3 +102,10 @@ func Weekday(year, month int, day float64) string {
 		return "undefined"
 	}
 }
+
+func DecimalHour(h, m, s int) float64 {
+	S := float64(s) / 60.0
+	M := (float64(m) + S) / 60.0
+	return float64(h) + M
+
+}

@@ -65,7 +65,7 @@ func Date(jd float64) (int, int, float64) {
 	D := int((float64(C) - 122.1) / 365.25)
 	E := int(365.25 * float64(D))
 	G := int(float64(C-E) / 30.6001)
-	d := float64(C) - float64(E) + F + float64(int(30.6001*float64(G)))
+	d := float64(C) - float64(E) + F - float64(int(30.6001*float64(G)))
 	m := G - 1
 	if float64(G) >= 13.5 {
 		m = G - 13

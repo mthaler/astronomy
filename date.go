@@ -76,3 +76,29 @@ func Date(jd float64) (int, int, float64) {
 	}
 	return y, m, d
 }
+
+func Weekday(year, month int, day float64) string {
+	d := int(day)
+	jd := JulianDay(year, month, float64(d))
+	A := (jd + 1.5) / 7
+	B := int(A)
+	C := int(math.Round((A - float64(B)) * 7.0))
+	switch C {
+	case 0:
+		return "Sunday"
+	case 1:
+		return "Monday"
+	case 2:
+		return "Tuesday"
+	case 3:
+		return "Wednesday"
+	case 4:
+		return "Thursday"
+	case 5:
+		return "Friday"
+	case 6:
+		return "Saturday"
+	default:
+		return "undefined"
+	}
+}

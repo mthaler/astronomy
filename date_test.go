@@ -23,3 +23,7 @@ func TestDate(t *testing.T) {
 	assert.Equal(t, 6, m)
 	assert.Equal(t, 19.75, d)
 }
+
+func TestWeekday(t *testing.T) {
+	assert.Equal(t, "Friday", Weekday(2009, 6, 19.75))
+}

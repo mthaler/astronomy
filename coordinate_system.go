@@ -12,3 +12,7 @@ func DecimalDegreesToDegreeHourMinute(d float64) (int, int, int) {
 	S := (M - float64(int(M))) * 60.0
 	return D, int(M), int(S)
 }
+
+func EquatorialToHorizontal(h, H, d float64) (int, int, int) {
+	return 0, 0, 0
+}

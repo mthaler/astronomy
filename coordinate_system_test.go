@@ -6,6 +6,13 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestDegreest(t *testing.T) {
-	assert.Equal(t, 182.52416666666667, Degrees(182, 31, 27))
+func TestDecinalDegreest(t *testing.T) {
+	assert.Equal(t, 182.52416666666667, DecimalDegrees(182, 31, 27))
+}
+
+func TestDecimalDegreesToDegreeHourMinute(t *testing.T) {
+	d, m, s := DecimalDegreesToDegreeHourMinute(182.52416666666667)
+	assert.Equal(t, 182, d)
+	assert.Equal(t, 31, m)
+	assert.Equal(t, 27, s)
 }

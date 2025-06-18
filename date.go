@@ -117,10 +117,10 @@ func DecimalHourToHourMinuteSecond(t float64) (int, int, int) {
 	return T, int(m), int(s)
 }
 
-func GST(year, month int, day float64) {
+/*func GST(year, month int, day float64) {
 	jd := JulianDay(year, month, float64(int(day)))
 	S := jd - 2451545.0
 	T := S / 36525.0
 	T0 := math.Mod(6.697374558+(2400.051336*T)+0.000025862+T*T, 24.0)
 	d := DecimalHour(year, month, int(day))
-}
+}*/

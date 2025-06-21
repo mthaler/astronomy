@@ -17,6 +17,13 @@ func TestJulianDay(t *testing.T) {
 	assert.Equal(t, 2455002.25, jd)
 }
 
+func TestJulianDayToGreenwichCalendarDate(t *testing.T) {
+	y, m, d := JulianDayToGreenwichCalendarDate(2455002.25)
+	assert.Equal(t, 2009, y)
+	assert.Equal(t, 6, m)
+	assert.Equal(t, 19.75, d)
+}
+
 func TestDate(t *testing.T) {
 	y, m, d := Date(2455002.25)
 	assert.Equal(t, 2009, y)

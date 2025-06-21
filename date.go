@@ -59,15 +59,15 @@ func JulianDayToGreenwichCalendarDate(jd float64) (int, int, float64) {
 	A := 0.0
 	B := float64(I)
 	if I > 2299160 {
-		A = (B - 1867216.25) / 36524.25
-		B = B + A
+		A = float64(int((B - 1867216.25) / 36524.25))
+		B = B + A - float64(int(A/4.0)) + 1
 
 	}
 	C := B + 1524.0
-	D := (C - 122.1) / 365.25
-	E := 365.25 * D
-	G := (C - E) / 30.6001
-	d := C - E + F - 30.6001*G
+	D := float64(int((C - 122.1) / 365.25))
+	E := float64(int(365.25 * D))
+	G := float64(int((C - E) / 30.6001))
+	d := C - E + F - float64(int(30.6001*G))
 	m := G - 1.0
 	if G >= 13.5 {
 		m = G - 13.0

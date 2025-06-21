@@ -103,24 +103,27 @@ func Weekday(year, month int, day float64) string {
 	}
 }
 
-func DecimalHour(h, m, s int) float64 {
-	S := float64(s) / 60.0
+func DecimalHour(h, m int, s float64) float64 {
+	S := s / 60.0
 	M := (float64(m) + S) / 60.0
 	return float64(h) + M
 }
 
-func DecimalHourToHourMinuteSecond(t float64) (int, int, int) {
+func DecimalHourToHourMinuteSecond(t float64) (int, int, float64) {
 	T := int(t)
 	f := t - float64(T)
 	m := f * 60
 	s := (m - float64(int(m))) * 60
-	return T, int(m), int(s)
+	return T, int(m), s
 }
 
-/*func GST(year, month int, day float64) {
-	jd := JulianDay(year, month, float64(int(day)))
+func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
+	jd := JulianDay(y, m, float64(int(d)))
 	S := jd - 2451545.0
 	T := S / 36525.0
 	T0 := math.Mod(6.697374558+(2400.051336*T)+0.000025862+T*T, 24.0)
-	d := DecimalHour(year, month, int(day))
-}*/
+	UT := DecimalHour(h, m, s)
+	A := UT*1.002737909 + T0
+	GST := math.Mod(T0, 24.0) + T0 + A
+	return DecimalHourToHourMinuteSecond(GST)
+}

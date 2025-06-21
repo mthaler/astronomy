@@ -1,16 +1,16 @@
 package astronomy
 
-func DecimalDegrees(h, m, s int) float64 {
-	S := float64(s) / 60.0
+func DecimalDegrees(h, m int, s float64) float64 {
+	S := s / 60.0
 	M := (float64(m) + S) / 60.0
 	return float64(h) + M
 }
 
-func DecimalDegreesToDegreeHourMinute(d float64) (int, int, int) {
+func DecimalDegreesToDegreeHourMinute(d float64) (int, int, float64) {
 	D := int(d)
 	M := (d - float64(int(d))) * 60.0
 	S := (M - float64(int(M))) * 60.0
-	return D, int(M), int(S)
+	return D, int(M), S
 }
 
 func DecimalDegreesToDeciamlHours(d float64) float64 {
@@ -21,10 +21,16 @@ func DecimalHoursToDecimalDegrees(d float64) float64 {
 	return d * 15
 }
 
-func RightAscension(h, m, s int) (int, int, int) {
+func RightAscension(h, m int, s float64) (int, int, float64) {
+	D := DecimalHoursToDecimalDegrees(DecimalDegrees(h, m, s))
+	H, M, S := DecimalDegreesToDegreeHourMinute(D)
+	return H, M, S
+}
+
+func HourAngle(h, m int, s float64) (int, int, float64) {
 	D := DecimalDegreesToDeciamlHours(DecimalDegrees(h, m, s))
-	h, m, s = DecimalDegreesToDegreeHourMinute(D)
-	return h, m, s
+	H, M, S := DecimalDegreesToDegreeHourMinute(D)
+	return H, M, S
 }
 
 func EquatorialToHorizontal(h, H, d float64) (int, int, int) {

@@ -79,31 +79,6 @@ func JulianDayToGreenwichCalendarDate(jd float64) (int, int, float64) {
 	return int(y), int(m), d
 }
 
-func Date(jd float64) (int, int, float64) {
-	jd = jd + 0.5
-	I := int(jd)
-	F := jd - float64(I)
-	B := I
-	if I >= 2299160 {
-		A := int((float64(I) - 1867216.25) / 36524.25)
-		B = I + A - A/4 + 1
-	}
-	C := B + 1524
-	D := int((float64(C) - 122.1) / 365.25)
-	E := int(365.25 * float64(D))
-	G := int(float64(C-E) / 30.6001)
-	d := float64(C) - float64(E) + F - float64(int(30.6001*float64(G)))
-	m := G - 1
-	if float64(G) >= 13.5 {
-		m = G - 13
-	}
-	y := D - 4716
-	if float64(m) < 2.5 {
-		y = D - 4715
-	}
-	return y, m, d
-}
-
 func Weekday(year, month int, day float64) string {
 	d := int(day)
 	jd := JulianDay(year, month, float64(d))
@@ -145,12 +120,15 @@ func DecimalHourToHourMinuteSecond(t float64) (int, int, float64) {
 	return T, int(m), s
 }
 
-/*func LocalTimeToUT(y, m, d, h, m int, s float64, o int) {
-	UT := DecimalHour(h, m, s) - float64(o)
-	GD := float64(d) - UT/24.0
+func LocalTimeToUT(y, m, d, h, mm int, s float64, dstc, o int) (int, int, float64) {
+	UT := DecimalHour(h-dstc, mm, s) - float64(o)
+	GD := float64(d) + UT/24.0
+	fmt.Println(GD)
 	JD := JulianDay(y, m, float64(d))
-
-}*/
+	Y, M, _ := JulianDayToGreenwichCalendarDate(JD)
+	fmt.Println(M)
+	return Y, M, float64(int(GD))
+}
 
 func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
 	jd := JulianDay(y, m, float64(d))

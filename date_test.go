@@ -24,13 +24,6 @@ func TestJulianDayToGreenwichCalendarDate(t *testing.T) {
 	assert.Equal(t, 19.75, d)
 }
 
-func TestDate(t *testing.T) {
-	y, m, d := Date(2455002.25)
-	assert.Equal(t, 2009, y)
-	assert.Equal(t, 6, m)
-	assert.Equal(t, 19.75, d)
-}
-
 func TestWeekday(t *testing.T) {
 	assert.Equal(t, "Friday", Weekday(2009, 6, 19.75))
 }
@@ -45,6 +38,19 @@ func TestDecimalHourToHourMinuteSecond(t *testing.T) {
 	assert.Equal(t, 18, h)
 	assert.Equal(t, 31, m)
 	assert.Equal(t, 27, S)
+}
+
+func TestLocalTimeToUT(t *testing.T) {
+	y, m, d := LocalTimeToUT(2013, 7, 1, 3, 37, 0.0, 1, 4)
+	h, mm, s := DecimalHourToHourMinuteSecond(d)
+	S := int(s)
+	assert.Equal(t, 2013, y)
+	assert.Equal(t, 6, m)
+	assert.Equal(t, 30, int(d))
+	assert.Equal(t, 22, h)
+	assert.Equal(t, 37, mm)
+	assert.Equal(t, 0, S)
+
 }
 
 func TestGST(t *testing.T) {

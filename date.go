@@ -34,7 +34,7 @@ func JulianDay(year, month int, day float64) float64 {
 	}
 	B := 0
 	if y >= 1582 {
-		if d >= 10 {
+		if m >= 10 {
 			if d >= 15 {
 				A := int(y / 100)
 				B = 2 - A + int(A/4)

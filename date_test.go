@@ -43,8 +43,7 @@ func TestDecimalHourToHourMinuteSecond(t *testing.T) {
 }
 
 func TestLocalTimeToUT(t *testing.T) {
-	y, m, d := LocalTimeToUT(2013, 7, 1, 3, 37, 0.0, 1, 4)
-	h, mm, s := DecimalHourToHourMinuteSecond(d)
+	y, m, d, h, mm, s := LocalTimeToUT(2013, 7, 1, 3, 37, 0.0, 1, 4)
 	S := int(s)
 	assert.Equal(t, 2013, y)
 	assert.Equal(t, 6, m)

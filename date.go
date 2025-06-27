@@ -127,14 +127,13 @@ func DecimalHourToHourMinuteSecond(t float64) (int, int, float64) {
 	return T, int(m), s
 }
 
-func LocalTimeToUT(y, m, d, h, mm int, s float64, dstc, o int) (int, int, int, int, int, float64) {
+func LocalTimeToUT(y, m, d, h, mm int, s float64, dstc, o int) (int, int, int, float64) {
 	UT := DecimalHour(h-dstc, mm, s) - float64(o)
 	GD := float64(d) + UT/24.0
 	JD := JulianDay(y, m, GD)
 	Y, M, D := JulianDayToGreenwichCalendarDate(JD)
 	t := (D - float64(int(D))) * 24.0
-	H, MM, S := DecimalHourToHourMinuteSecond(t)
-	return Y, M, int(D), H, MM, S
+	return Y, M, int(D), t
 }
 
 func GST(y, m, d, h, mm int, s float64) (int, int, float64) {

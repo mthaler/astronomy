@@ -1,7 +1,6 @@
 package astronomy
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -142,10 +141,9 @@ func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
 	T := S / 36525.0
 	T0 := 6.697374558 + (2400.051336 * T) + 0.000025862*T*T
 	T0 = normalize(T0)
-	UT := DecimalHour(h, m, s)
-	fmt.Println(UT)
-	A := UT*1.002737909 + T0
-	GST := math.Mod(T0, 24.0) + T0 + A
+	UT := DecimalHour(h, mm, s)
+	A := UT * 1.002737909
+	GST := normalize(T0 + A)
 	return DecimalHourToHourMinuteSecond(GST)
 }
 

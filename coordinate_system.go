@@ -1,6 +1,7 @@
 package astronomy
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -53,4 +54,9 @@ func EquatorialToHorizontal(h, m, s, hh, mm, ss, l int) (int, int, float64, int,
 	hhh, mmm, sss := DecimalDegreesToDegreeHourMinute(a)
 	HH, M, S := DecimalHourToHourMinuteSecond(A)
 	return hhh, mmm, sss, HH, M, S
+}
+
+func HorizontalToEquatorial(h, m int, s float64) {
+	A := DecimalDegrees(h, m, s)
+	fmt.Println(A)
 }

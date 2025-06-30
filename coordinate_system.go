@@ -1,7 +1,6 @@
 package astronomy
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -39,12 +38,18 @@ func HourAngle(h, m int, s float64) (int, int, float64) {
 	return H, M, S
 }
 
-func EquatorialToHorizontal(h, m, s, hh, mm, ss, l int) (int, int, int) {
+func EquatorialToHorizontal(h, m, s, hh, mm, ss, l int) (int, int, float64) {
 	H := DecimalHour(h, m, float64(s))
 	H = H * 15.0
 	d := DecimalDegrees(hh, mm, float64(ss))
 	sina := math.Sin(d*math.Pi/180.0)*math.Sin(float64(l)*math.Pi/180.0) + math.Cos(d*math.Pi/180.0)*math.Cos(float64(l)*math.Pi/180.0)*math.Cos(H*math.Pi/180.0)
-	a := math.Asin(sina) * 180.0 / math.Pi
-	fmt.Println(a)
-	return 0, 0, 0
+	a := math.Asin(sina) * 180 / math.Pi
+	cosA := (math.Sin(d*math.Pi/180.0) - math.Sin(float64(l)*math.Pi/180.0)*sina) / (math.Cos(float64(l)*math.Pi/180.0) * math.Cos(a))
+	A := math.Acos(cosA) * 180 / math.Pi
+	sinH := math.Sin(H * math.Pi / 180.0)
+	if sinH > 0 {
+		A = 360.0 - A
+	}
+	hhh, mmm, sss := DecimalDegreesToDegreeHourMinute(a)
+	return hhh, mmm, sss
 }

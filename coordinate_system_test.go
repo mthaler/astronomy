@@ -36,3 +36,7 @@ func TestEquatorialToHorizontal(t *testing.T) {
 	assert.Equal(t, 16, M)
 	assert.Equal(t, 15.69816218970118, S)
 }
+
+func TestHorizontalToEquatorial(t *testing.T) {
+	HorizontalToEquatorial(283, 16, 15.7)
+}

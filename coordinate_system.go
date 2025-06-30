@@ -39,7 +39,7 @@ func HourAngle(h, m int, s float64) (int, int, float64) {
 	return H, M, S
 }
 
-func EquatorialToHorizontal(h, m, s, hh, mm, ss, l int) (int, int, float64, int, int, float64) {
+func EquatorialToHorizontal(h, m, s, hh, mm, ss int, l float64) (int, int, float64, int, int, float64) {
 	H := DecimalHour(h, m, float64(s))
 	H = H * 15.0
 	d := DecimalDegrees(hh, mm, float64(ss))
@@ -56,7 +56,11 @@ func EquatorialToHorizontal(h, m, s, hh, mm, ss, l int) (int, int, float64, int,
 	return hhh, mmm, sss, HH, M, S
 }
 
-func HorizontalToEquatorial(h, m int, s float64) {
-	A := DecimalDegrees(h, m, s)
-	fmt.Println(A)
+func HorizontalToEquatorial(h, m int, s float64, hh, mm int, ss, l float64) {
+	A := DecimalDegrees(hh, mm, ss)
+	a := DecimalDegrees(h, m, s)
+	sind := math.Sin(a*math.Pi/180.0)*math.Sin(l*math.Pi/180.0) + math.Cos(a*math.Pi/180.0)*math.Cos(l*math.Pi/180.0)*math.Cos(A*math.Pi/180.0)
+	d := math.Asin(sind)
+	cosH := (math.Sin(a*math.Pi/180.0) - math.Sin(l*math.Pi/180.0)*sind) / (math.Cos(l*math.Pi/180.0) * math.Cos(d))
+	fmt.Println(cosH)
 }

@@ -28,7 +28,7 @@ func TestRightAscension(t *testing.T) {
 }
 
 func TestEquatorialToHorizontal(t *testing.T) {
-	h, m, s, H, M, S := EquatorialToHorizontal(5, 51, 44, 23, 13, 10, 52)
+	h, m, s, H, M, S := EquatorialToHorizontal(5, 51, 44, 23, 13, 10, 52.0)
 	assert.Equal(t, 19, h)
 	assert.Equal(t, 20, m)
 	assert.Equal(t, 3.642807769706735, s)
@@ -38,5 +38,5 @@ func TestEquatorialToHorizontal(t *testing.T) {
 }
 
 func TestHorizontalToEquatorial(t *testing.T) {
-	HorizontalToEquatorial(283, 16, 15.7)
+	HorizontalToEquatorial(19, 20, 3.64, 283, 16, 15.7, 52.0)
 }

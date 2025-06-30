@@ -1,5 +1,7 @@
 package astronomy
 
+import "fmt"
+
 func DecimalDegrees(h, m int, s float64) float64 {
 	S := s / 60.0
 	M := (float64(m) + S) / 60.0
@@ -34,8 +36,10 @@ func HourAngle(h, m int, s float64) (int, int, float64) {
 	return H, M, S
 }
 
-func EquatorialToHorizontal(h, m, s int) (int, int, int) {
+func EquatorialToHorizontal(h, m, s, d, mm, ss, l int) (int, int, int) {
 	H := DecimalHour(h, m, float64(s))
 	H = H * 15.0
+	d := DecimalDegrees(float64(l))
+	fmt.Println(d)
 	return 0, 0, 0
 }

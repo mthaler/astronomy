@@ -1,6 +1,7 @@
 package astronomy
 
 import (
+	"fmt"
 	"math"
 	"testing"
 
@@ -25,4 +26,11 @@ func TestRightAscension(t *testing.T) {
 	assert.Equal(t, 144, h)
 	assert.Equal(t, 2, m)
 	assert.Equal(t, 33.0, S)
+}
+
+func TestEquatorialToHorizontal(t *testing.T) {
+	d, m, s := EquatorialToHorizontal(5, 51, 44, 23, 13, 10, 52)
+	fmt.Println(d)
+	fmt.Println(m)
+	fmt.Println(s)
 }

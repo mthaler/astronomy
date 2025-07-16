@@ -1,7 +1,6 @@
 package astronomy
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -56,7 +55,7 @@ func EquatorialToHorizontal(h, m, s, hh, mm, ss int, l float64) (int, int, float
 	return hhh, mmm, sss, HH, M, S
 }
 
-func HorizontalToEquatorial(h, m int, s float64, hh, mm int, ss, l float64) (int, int, float64) {
+func HorizontalToEquatorial(h, m int, s float64, hh, mm int, ss, l float64) (int, int, float64, int, int, float64) {
 	A := DecimalDegrees(hh, mm, ss)
 	a := DecimalDegrees(h, m, s)
 	sind := math.Sin(a*math.Pi/180.0)*math.Sin(l*math.Pi/180.0) + math.Cos(a*math.Pi/180.0)*math.Cos(l*math.Pi/180.0)*math.Cos(A*math.Pi/180.0)
@@ -71,9 +70,8 @@ func HorizontalToEquatorial(h, m int, s float64, hh, mm int, ss, l float64) (int
 	}
 	H = H / 15.0
 	h2, m2, s2 := DecimalHourToHourMinuteSecond(H * 180.0 / math.Pi)
-	fmt.Println(h2)
-	//h3, m3, s3 := DecimalDegreesToDegreeHourMinute(A)
-	return h2, m2, s2
+	h3, m3, s3 := DecimalDegreesToDegreeHourMinute(d * 180.0 / math.Pi)
+	return h2, m2, s2, h3, m3, s3
 }
 
 func EclipticToEquatorial() {

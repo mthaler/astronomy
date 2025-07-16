@@ -1,6 +1,7 @@
 package astronomy
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -60,13 +61,18 @@ func HorizontalToEquatorial(h, m int, s float64, hh, mm int, ss, l float64) (int
 	a := DecimalDegrees(h, m, s)
 	sind := math.Sin(a*math.Pi/180.0)*math.Sin(l*math.Pi/180.0) + math.Cos(a*math.Pi/180.0)*math.Cos(l*math.Pi/180.0)*math.Cos(A*math.Pi/180.0)
 	d := math.Asin(sind)
-	sinH := (math.Sin(a*math.Pi/180.0) - math.Sin(l*math.Pi/180.0)*sind) / (math.Cos(l*math.Pi/180.0) * math.Cos(d))
-	sinA := math.Sin(A * math.Pi / 180.0)
-	A = math.Asin(sinA)
-	if sinH >= 0 {
-		A = 360.0 - A*180.0/math.Pi
+	cosH := (math.Sin(a*math.Pi/180.0) - math.Sin(l*math.Pi/180.0)*sind) / (math.Cos(l*math.Pi/180.0) * math.Cos(d))
+	H := math.Acos(cosH)
+	cosA := (math.Sin(A*math.Pi/180.0) - math.Sin(l*math.Pi/180.0)*sind) / (math.Cos(l*math.Pi/180.0) * math.Cos(d))
+	A = math.Acos(cosA)
+	sinA := math.Sin(A)
+	if sinA >= 0 {
+		H = 360.0 - H*180.0/math.Pi
 	}
-	h2, m2, s2 := DecimalHourToHourMinuteSecond(a)
+	H = H / 15.0
+	h2, m2, s2 := DecimalHourToHourMinuteSecond(H * 180.0 / math.Pi)
+	fmt.Println(h2)
+	//h3, m3, s3 := DecimalDegreesToDegreeHourMinute(A)
 	return h2, m2, s2
 }
 

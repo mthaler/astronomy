@@ -38,5 +38,8 @@ func TestEquatorialToHorizontal(t *testing.T) {
 }
 
 func TestHorizontalToEquatorial(t *testing.T) {
-	HorizontalToEquatorial(19, 20, 3.64, 283, 16, 15.7, 52.0)
+	h, m, s := HorizontalToEquatorial(19, 20, 3.64, 283, 16, 15.7, 52.0)
+	assert.Equal(t, 19, h)
+	assert.Equal(t, 20, m)
+	assert.Equal(t, 3.639999999997201, s)
 }

@@ -102,5 +102,7 @@ func EquatorialToEcliptic(ah, am int, as float64) {
 }
 
 func EquatorialToGalactic(ah, am int, as float64) {
-
+	a := DecimalHour(ah, am, as)
+	a = a * 15.0
+	fmt.Println(a)
 }

@@ -46,3 +46,10 @@ func TestHorizontalToEquatorial(t *testing.T) {
 	assert.Equal(t, 13, m2)
 	assert.Equal(t, 10.0, math.Round(s2))
 }
+
+func TestEclipticToEquatorial(t *testing.T) {
+	d, m, s := EclipticToEquatorial(2009, 7, 6.0)
+	assert.Equal(t, 23, d)
+	assert.Equal(t, 26, m)
+	assert.Equal(t, 17.0, math.Round(s))
+}

@@ -74,6 +74,12 @@ func HorizontalToEquatorial(h, m int, s float64, hh, mm int, ss, l float64) (int
 	return h2, m2, s2, h3, m3, s3
 }
 
-func EclipticToEquatorial() {
-
+func EclipticToEquatorial(y, m int, d float64) (int, int, float64) {
+	jd := JulianDay(y, m, d)
+	mjd := jd - 2451545.0
+	T := mjd / 36525.0
+	DE := 46.815*T + 0.0006*T*T - 0.00181*T*T*T
+	DE = DE / 3600.0
+	e := 23.439292 - DE
+	return DecimalDegreesToDegreeHourMinute(e)
 }

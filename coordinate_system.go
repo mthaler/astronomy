@@ -1,6 +1,7 @@
 package astronomy
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -74,7 +75,7 @@ func HorizontalToEquatorial(h, m int, s float64, hh, mm int, ss, l float64) (int
 	return h2, m2, s2, h3, m3, s3
 }
 
-func EclipticToEquatorial(y, m int, d float64) (int, int, float64) {
+func MeanObliquity(y, m int, d float64) (int, int, float64) {
 	jd := JulianDay(y, m, d)
 	mjd := jd - 2451545.0
 	T := mjd / 36525.0
@@ -82,4 +83,12 @@ func EclipticToEquatorial(y, m int, d float64) (int, int, float64) {
 	DE = DE / 3600.0
 	e := 23.439292 - DE
 	return DecimalDegreesToDegreeHourMinute(e)
+}
+
+func EclipticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64, y, m int, d float64) {
+	l := DecimalDegrees(ld, lm, ls)
+	b := DecimalDegrees(bd, bm, bs)
+	e := 23.438055 * math.Pi / 180.0
+	fmt.Println(l)
+	fmt.Println(b)
 }

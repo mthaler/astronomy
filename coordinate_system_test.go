@@ -64,5 +64,5 @@ func TestEquatorialToEcliptic(t *testing.T) {
 }
 
 func TestEquatorialToGalactic(t *testing.T) {
-	EquatorialToGalactic(10, 21, 0)
+	EquatorialToGalactic(10, 21, 0, 10, 3, 11.0)
 }

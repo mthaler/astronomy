@@ -95,3 +95,12 @@ func EclipticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64, y, m i
 	fmt.Println(e)
 	fmt.Println(sind)
 }
+
+func EquatorialToEcliptic(ah, am int, as float64) {
+	a := DecimalHour(ah, am, as)
+	fmt.Println(a)
+}
+
+func EquatorialToGalactic(ah, am int, as float64) {
+
+}

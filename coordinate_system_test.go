@@ -57,3 +57,12 @@ func TestMeanObliquity(t *testing.T) {
 func TestEclipticToEquatorial(t *testing.T) {
 	EclipticToEquatorial(139, 41, 10.0, 4, 52, 31.0, 2009, 7, 6.0)
 }
+
+func TestEquatorialToEcliptic(t *testing.T) {
+	EquatorialToEcliptic(9, 34, 53.32)
+
+}
+
+func TestEquatorialToGalactic(t *testing.T) {
+
+}

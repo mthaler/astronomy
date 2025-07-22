@@ -64,8 +64,11 @@ func TestEquatorialToEcliptic(t *testing.T) {
 }
 
 func TestEquatorialToGalactic(t *testing.T) {
-	ld, lm, ls := EquatorialToGalactic(10, 21, 0, 10, 3, 11.0)
+	ld, lm, ls, bd, bm, bs := EquatorialToGalactic(10, 21, 0, 10, 3, 11.0)
 	assert.Equal(t, 232, ld)
 	assert.Equal(t, 14, lm)
 	assert.Equal(t, 52.0, math.Round(ls))
+	assert.Equal(t, 51, bd)
+	assert.Equal(t, 7, bm)
+	assert.Equal(t, 20.0, math.Round(bs))
 }

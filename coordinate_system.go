@@ -101,14 +101,14 @@ func EquatorialToEcliptic(ah, am int, as float64) {
 	fmt.Println(a)
 }
 
-func EquatorialToGalactic(ah, am int, as float64, dd, dm int, ds float64) {
+func EquatorialToGalactic(ah, am int, as float64, dd, dm int, ds float64) (int, int, float64) {
 	a := DecimalHour(ah, am, as)
 	a = a * 15.0
 	d := DecimalDegrees(dd, dm, ds)
 	sinb := math.Cos(d*math.Pi/180.0)*math.Cos(27.4*math.Pi/180.0)*math.Cos((a-192.25)*math.Pi/180.0) + math.Sin(d*math.Pi/180.0)*math.Sin(27.4*math.Pi/180.0)
 	b := math.Asin(sinb)
 	y := math.Sin(d*math.Pi/180.0) - math.Sin(b)*math.Sin(27.4*math.Pi/180.0)
-	fmt.Println(y)
-	x := math.Cos(d*math.Pi/180.0) * math.Sin(a * math.Pi / 180.0 − 192.25 * math.Pi / 180.0) * math.Cos(27.4 * math.Pi / 180.0)
-	fmt.Println(x)
+	x := math.Cos(d*math.Pi/180.0) * math.Sin(a*math.Pi/180.0-192.25*math.Pi/180.0) * math.Cos(27.4*math.Pi/180.0)
+	l := math.Atan(y/x)*180.0/math.Pi + 33.0 + 180.0
+	return DecimalDegreesToDegreeHourMinute(l)
 }

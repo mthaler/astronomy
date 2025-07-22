@@ -114,3 +114,7 @@ func EquatorialToGalactic(ah, am int, as float64, dd, dm int, ds float64) (int, 
 	bd, bm, bs := DecimalDegreesToDegreeHourMinute(b * 180.0 / math.Pi)
 	return ld, lm, ls, bd, bm, bs
 }
+
+func GalacticToEquatorial() {
+
+}

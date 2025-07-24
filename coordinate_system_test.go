@@ -72,3 +72,7 @@ func TestEquatorialToGalactic(t *testing.T) {
 	assert.Equal(t, 7, bm)
 	assert.Equal(t, 20.0, math.Round(bs))
 }
+
+func TestGalacticToEquatorial() {
+	GalacticToEquatorial(232, 14, 52.0, 51, 7, 20.0)
+}

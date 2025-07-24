@@ -115,6 +115,6 @@ func EquatorialToGalactic(ah, am int, as float64, dd, dm int, ds float64) (int, 
 	return ld, lm, ls, bd, bm, bs
 }
 
-func GalacticToEquatorial() {
+func GalacticToEquatorial(ld, lm int, ls float64, bd, bd int, bs float64) {
 
 }

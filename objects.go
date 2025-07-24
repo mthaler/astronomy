@@ -23,3 +23,7 @@ func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int) 
 	cosH := (math.Sin(nu*math.Pi/180.0 + math.Sin(a*math.Pi/180.0)*math.Sin(de*math.Pi/180.0))) / (math.Cos(a*math.Pi/180.0) * math.Cos(de*math.Pi/180.0))
 	fmt.Println(cosH)
 }
+
+func Precession() {
+
+}

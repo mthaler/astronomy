@@ -25,5 +25,6 @@ func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int) 
 }
 
 func Precession(ah, am int, as float64) {
-
+	a := DecimalHour(ah, am, as)
+	fmt.Println(a)
 }

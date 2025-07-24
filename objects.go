@@ -26,13 +26,16 @@ func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int) 
 
 func Precession(ah, am int, as float64, dd, dm int, ds float64) {
 	a := DecimalHour(ah, am, as)
-	a = a * 15
-	fmt.Println(a)
+	ad := a * 15
+	fmt.Println(ad)
 	d := DecimalDegrees(dd, dm, ds)
-	fmt.Println(d)
 	N := 29.5
 	S := (3.07327 + 1.33617*math.Sin(a*math.Pi/180.0)*math.Tan(d*math.Pi/180.0)) * N
 	S = S / 3600.0
 	a1 := S + a
+	h, m, s := DecimalHourToHourMinuteSecond(a1)
 	fmt.Println(a1)
+	fmt.Println(h)
+	fmt.Println(m)
+	fmt.Println(s)
 }

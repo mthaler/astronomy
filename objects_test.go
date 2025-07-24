@@ -11,5 +11,5 @@ func TestRisingSetting(t *testing.T) {
 }
 
 func TestPrecession(t *testing.T) {
-	Precession(9, 10, 43.0)
+	Precession(9, 10, 43.0, 14, 23, 25.0)
 }

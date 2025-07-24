@@ -24,6 +24,6 @@ func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int) 
 	fmt.Println(cosH)
 }
 
-func Precession() {
+func Precession(ah, am int, as float64) {
 
 }

@@ -115,7 +115,7 @@ func EquatorialToGalactic(ah, am int, as float64, dd, dm int, ds float64) (int, 
 	return ld, lm, ls, bd, bm, bs
 }
 
-func GalacticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64) (int, int, float64) {
+func GalacticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64) (int, int, float64, int, int, float64) {
 	l := DecimalDegrees(ld, lm, ls)
 	b := DecimalDegrees(bd, bm, bs)
 	sind := math.Cos(b*math.Pi/180.0)*math.Cos(27.4*math.Pi/180.0)*math.Sin((l-33.0)*math.Pi/180.0) + math.Sin(b*math.Pi/180.0)*math.Sin(27.4*math.Pi/180.0)
@@ -126,5 +126,7 @@ func GalacticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64) (int, 
 	fmt.Printf("x:%g\n", x)
 	a := math.Atan(y/x)*180.0/math.Pi + 192.25
 	a = a / 15.0
-	return DecimalHourToHourMinuteSecond(a)
+	ah, am, as := DecimalHourToHourMinuteSecond(a)
+	dh, dm, ds := DecimalDegreesToDegreeHourMinute(d)
+	return ah, am, as, dh, dm, ds
 }

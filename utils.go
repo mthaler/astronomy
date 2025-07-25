@@ -1,5 +1,7 @@
 package astronomy
 
+import "math"
+
 func normalizeTime(n float64) float64 {
 	r := n
 	for {
@@ -14,4 +16,8 @@ func normalizeTime(n float64) float64 {
 		}
 	}
 	return r
+}
+
+func isInteger(x float64) bool {
+	return math.Abs(x-math.Round(x)) < 0.001
 }

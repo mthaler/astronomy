@@ -15,7 +15,7 @@ func AngleBetween(alh, alm int, als float64, adh, adm int, ads float64, blh, blm
 }
 
 func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int) {
-	nu := 34.0 / 60.0
+	nu := 34.0 / 60.0 // degrees
 	a := DecimalHour(ah, am, as)
 	fmt.Println(a)
 	de := DecimalDegrees(dd, dm, ds)
@@ -38,4 +38,28 @@ func Precession(ah, am int, as float64, dd, dm int, ds float64) {
 	fmt.Println(h)
 	fmt.Println(m)
 	fmt.Println(s)
+}
+
+func Nutation() {
+
+}
+
+func Aberration() {
+
+}
+
+func Refraction() {
+
+}
+
+func Parallax() {
+
+}
+
+func CarringtonRotation() {
+
+}
+
+func AtmosphericExtinction() {
+
 }

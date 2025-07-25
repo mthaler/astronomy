@@ -1,5 +1,13 @@
 package astronomy
 
-func test() {
+func SunOrbit() {
+
+}
+
+func SunPosition() {
+
+}
+
+func SunDistance() {
 
 }

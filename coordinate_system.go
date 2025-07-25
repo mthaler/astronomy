@@ -13,8 +13,8 @@ func DecimalDegrees(h, m int, s float64) float64 {
 
 func DecimalDegreesToDegreeHourMinute(d float64) (int, int, float64) {
 	D := int(d)
-	M := (d - float64(int(d))) * 60.0
-	S := (M - float64(int(M))) * 60.0
+	M := (d - math.Floor(d)) * 60.0
+	S := (M - math.Floor(M)) * 60.0
 	return D, int(M), S
 }
 

@@ -122,7 +122,7 @@ func DecimalHourToHourMinuteSecond(t float64) (int, int, float64) {
 	T := int(t)
 	f := t - float64(T)
 	m := f * 60
-	s := (m - float64(int(m))) * 60
+	s := (m - math.Floor(m)) * 60
 	return T, int(m), s
 }
 

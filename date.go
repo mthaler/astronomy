@@ -113,17 +113,16 @@ func Weekday(year, month int, day float64) string {
 
 func DecimalHour(h, m int, s float64) float64 {
 	S := s / 60.0
-	_, M := math.Modf(S)
+	M := (float64(m) + S) / 60.0
 	H := float64(h) + M
 	return H
 }
 
 func DecimalHourToHourMinuteSecond(t float64) (int, int, float64) {
-	T := int(t)
-	f := t - float64(int(t))
-	m := f * 60.0
-	s := (m - float64(int(m))) * 60.0
-	return T, int(m), s
+	T, f := math.Modf(t)
+	m, s := math.Modf(f * 60.0)
+	s = s * 60.0
+	return int(T), int(m), s
 }
 
 func LocalTimeToUT(y, m, d, h, mm int, s float64, dstc, o int) (int, int, int, float64) {

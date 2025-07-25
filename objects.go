@@ -52,8 +52,9 @@ func Nutation(y, m int, d float64) (float64, float64) {
 	return DP, De
 }
 
-func Aberration() {
-
+func Aberration(ld, lm int, ls float64) {
+	l := DecimalDegrees(ld, lm, ls)
+	fmt.Println(l)
 }
 
 func Refraction() {

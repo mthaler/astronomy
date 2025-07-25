@@ -20,6 +20,6 @@ func TestPrecession(t *testing.T) {
 
 func TestNutation(t *testing.T) {
 	DP, De := Nutation(1988, 9, 1.0)
-	assert.Equal(t, 5.5, DP)
-	assert.Equal(t, 9.2, De)
+	assert.Equal(t, 5.49291620725019, DP)
+	assert.Equal(t, 9.241559684661622, De)
 }

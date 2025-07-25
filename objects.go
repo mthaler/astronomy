@@ -62,7 +62,8 @@ func Aberration(ld, lm int, ls float64, bd, bm int, bs float64, sd, sm int, ss f
 }
 
 func Refraction(h, m int, s float64, dd, md int, sd float64) {
-
+	a := DecimalHour(h, m, s)
+	fmt.Println(a)
 }
 
 func Parallax() {

@@ -90,9 +90,6 @@ func EclipticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64, y, m i
 	b := DecimalDegrees(bd, bm, bs)
 	e := 23.438055
 	sind := math.Sin(b*math.Pi/180.0)*math.Sin(e*math.Pi/180.0) + math.Cos(b*math.Pi/180.0)*math.Sin(e*math.Pi/180.0)*math.Sin(l*math.Pi/180.0)
-	fmt.Println(l)
-	fmt.Println(b)
-	fmt.Println(e)
 	fmt.Println(sind)
 }
 
@@ -120,10 +117,8 @@ func GalacticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64) (int, 
 	b := DecimalDegrees(bd, bm, bs)
 	sind := math.Cos(b*math.Pi/180.0)*math.Cos(27.4*math.Pi/180.0)*math.Sin((l-33.0)*math.Pi/180.0) + math.Sin(b*math.Pi/180.0)*math.Sin(27.4*math.Pi/180.0)
 	d := math.Asin(sind)
-	fmt.Printf("d:%g\n", d*180.0/math.Pi)
 	y := math.Cos(b*math.Pi/180.0) * math.Cos((l-33.0)*math.Pi/180.0)
 	x := math.Sin(b*math.Pi/180.0)*math.Cos(27.4*math.Pi/180.0) - math.Cos(b*math.Pi/180.0)*math.Sin(27.4*math.Pi/180.0)*math.Sin((l-33.0)*math.Pi/180.0)
-	fmt.Printf("x:%g\n", x)
 	a := math.Atan(y/x)*180.0/math.Pi + 192.25
 	a = a / 15.0
 	ah, am, as := DecimalHourToHourMinuteSecond(a)

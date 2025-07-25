@@ -117,11 +117,11 @@ func GalacticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64) (int, 
 	b := DecimalDegrees(bd, bm, bs)
 	sind := math.Cos(b*math.Pi/180.0)*math.Cos(27.4*math.Pi/180.0)*math.Sin((l-33.0)*math.Pi/180.0) + math.Sin(b*math.Pi/180.0)*math.Sin(27.4*math.Pi/180.0)
 	d := math.Asin(sind)
-	fmt.Printf("d: %g\n", d*180.0/math.Pi)
 	y := math.Cos(b*math.Pi/180.0) * math.Cos((l-33.0)*math.Pi/180.0)
 	x := math.Sin(b*math.Pi/180.0)*math.Cos(27.4*math.Pi/180.0) - math.Cos(b*math.Pi/180.0)*math.Sin(27.4*math.Pi/180.0)*math.Sin((l-33.0)*math.Pi/180.0)
 	a := math.Atan(y/x)*180.0/math.Pi + 192.25
 	a = a / 15.0
+	fmt.Printf("a: %g\n", a)
 	ah, am, as := DecimalHourToHourMinuteSecond(a)
 	dh, dm, ds := DecimalDegreesToDegreeHourMinute(d)
 	return ah, am, as, dh, dm, ds

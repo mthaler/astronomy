@@ -25,5 +25,5 @@ func TestNutation(t *testing.T) {
 }
 
 func TestAberration(t *testing.T) {
-	Aberration(352, 37, 10.1)
+	Aberration(352, 37, 10.1, -1, 32, 56.4)
 }

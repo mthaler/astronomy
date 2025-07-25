@@ -1,6 +1,10 @@
 package astronomy
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestAngleBetween(t *testing.T) {
 	AngleBetween(5, 13, 31.7, -8, 13, 30.0, 6, 44, 13.4, -16, 41, 11.0)
@@ -15,5 +19,7 @@ func TestPrecession(t *testing.T) {
 }
 
 func TestNutation(t *testing.T) {
-	Nutation(1988, 9, 1.0)
+	DP, De := Nutation(1988, 9, 1.0)
+	assert.Equal(t, 5.5, DP)
+	assert.Equal(t, 9.2, De)
 }

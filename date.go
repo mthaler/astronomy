@@ -140,25 +140,9 @@ func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
 	S := jd - 2451545.0
 	T := S / 36525.0
 	T0 := 6.697374558 + (2400.051336 * T) + 0.000025862*T*T
-	T0 = normalize(T0)
+	T0 = normalizeTime(T0)
 	UT := DecimalHour(h, mm, s)
 	A := UT * 1.002737909
-	GST := normalize(T0 + A)
+	GST := normalizeTime(T0 + A)
 	return DecimalHourToHourMinuteSecond(GST)
-}
-
-func normalize(n float64) float64 {
-	r := n
-	for {
-		if r > 24.0 {
-			r = r - 24.0
-		}
-		if r < 0.0 {
-			r = r + 24.0
-		}
-		if r >= 0.0 && r <= 24.0 {
-			break
-		}
-	}
-	return r
 }

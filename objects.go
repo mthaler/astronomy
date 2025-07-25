@@ -61,7 +61,7 @@ func Aberration(ld, lm int, ls float64, bd, bm int, bs float64, sd, sm int, ss f
 	fmt.Println(s)
 }
 
-func Refraction(ha, ma int, hs float64) {
+func Refraction(h, m int, s float64, dd, md int, sd float64) {
 
 }
 

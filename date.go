@@ -70,10 +70,10 @@ func JulianDayToGreenwichCalendarDate(jd float64) (int, int, float64) {
 
 	}
 	C := B + 1524.0
-	D := float64(int((C - 122.1) / 365.25))
-	E := float64(int(365.25 * D))
-	G := float64(int((C - E) / 30.6001))
-	d := C - E + F - float64(int(30.6001*G))
+	D := math.Floor(((C - 122.1) / 365.25))
+	E := math.Floor(365.25 * D)
+	G := math.Floor((C - E) / 30.6001)
+	d := C - E + F - math.Floor(30.6001*G)
 	m := G - 1.0
 	if G >= 13.5 {
 		m = G - 13.0

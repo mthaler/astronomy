@@ -40,8 +40,9 @@ func Precession(ah, am int, as float64, dd, dm int, ds float64) {
 	fmt.Println(s)
 }
 
-func Nutation() {
-
+func Nutation(y, m int, d float64) {
+	jd := JulianDay(y, m, d)
+	fmt.Println(jd)
 }
 
 func Aberration() {

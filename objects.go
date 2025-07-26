@@ -73,7 +73,3 @@ func Parallax() {
 func CarringtonRotation() {
 
 }
-
-func AtmosphericExtinction() {
-
-}

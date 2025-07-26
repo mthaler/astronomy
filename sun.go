@@ -11,3 +11,7 @@ func SunPosition() {
 func SunDistance() {
 
 }
+
+func SunriseSunset() {
+
+}

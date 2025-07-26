@@ -68,5 +68,5 @@ func TestDays(t *testing.T) {
 }
 
 func TestIsLeapYear(t *testing.T) {
-
+	assert.Equal(t, true, IsLeapYear(2000))
 }

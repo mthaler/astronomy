@@ -31,3 +31,15 @@ func SunDistance() {
 func SunriseSunset() {
 
 }
+
+func Twilight() {
+
+}
+
+func Time() {
+
+}
+
+func SolarElongations() {
+
+}

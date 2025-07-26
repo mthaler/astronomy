@@ -148,3 +148,7 @@ func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
 	GST := normalizeTime(T0 + A)
 	return DecimalHourToHourMinuteSecond(GST)
 }
+
+func Days(m, d int) int {
+	return 0
+}

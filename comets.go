@@ -8,3 +8,7 @@ func CometPosition(y int) {
 	Y := float64(y) - CometEpoch
 	fmt.Println(Y)
 }
+
+func Parabolic() {
+
+}

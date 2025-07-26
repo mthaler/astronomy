@@ -4,7 +4,7 @@ func SunOrbit() {
 
 }
 
-func SunPosition() {
+func SunPosition(y, m, d, h, mm int, s float64) {
 
 }
 

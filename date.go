@@ -150,8 +150,11 @@ func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
 }
 
 func Days(m, d int) int {
-	days := 0
-	return days
+	dd := 0
+	for i := 0; i < m; i++ {
+		dd += days(i + 1)
+	}
+	return dd
 }
 
 func days(m int) int {
@@ -168,8 +171,21 @@ func days(m int) int {
 		return 31
 	case 6:
 		return 30
+	case 7:
+		return 31
+	case 8:
+		return 31
+	case 9:
+		return 30
+	case 10:
+		return 31
+	case 11:
+		return 30
+	case 12:
+		return 31
+	default:
+		return 0
 	}
-	return 0
 }
 
 func IsLeapYear(y int) bool {

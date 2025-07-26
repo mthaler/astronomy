@@ -7,8 +7,21 @@ func SunOrbit() {
 }
 
 func SunPosition(y, m, d, h, mm int, s float64) {
-	jd := JulianDay(0, m, float64(d))
-	fmt.Println(jd)
+	D := Days(m, d)
+	if y == 2010 {
+		D += 365
+	}
+	if y > 2010 {
+		for yy := y; yy < y; yy++ {
+			D += 365
+		}
+	}
+	if y < 2010 {
+		for yy := y; yy > y; yy-- {
+			D -= 365
+		}
+	}
+	fmt.Println(D)
 }
 
 func SunDistance() {

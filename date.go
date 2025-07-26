@@ -153,3 +153,21 @@ func Days(m, d int) int {
 	days := 0
 	return days
 }
+
+func days(m int) int {
+	switch m {
+	case 1:
+		return 31
+	case 2:
+		return 28
+	case 3:
+		return 31
+	case 4:
+		return 30
+	case 5:
+		return 31
+	case 6:
+		return 30
+	}
+	return 0
+}

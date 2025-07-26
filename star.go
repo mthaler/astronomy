@@ -1,5 +1,5 @@
 package astronomy
 
-func BinaryStarOrbit() {
+func BinaryStarOrbit(y, m, d int) {
 
 }

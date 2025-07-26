@@ -7,5 +7,5 @@ func TestCometPosition(t *testing.T) {
 }
 
 func TestParabolic(t *testing.T) {
-
+	Parabolic(1977, 12, 24)
 }

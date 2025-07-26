@@ -66,3 +66,7 @@ func TestGST(t *testing.T) {
 func TestDays(t *testing.T) {
 	Days(7, 27)
 }
+
+func TestIsLeapYear(t *testing.T) {
+
+}

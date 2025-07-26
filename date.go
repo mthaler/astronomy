@@ -150,5 +150,6 @@ func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
 }
 
 func Days(m, d int) int {
-	return 0
+	days := 0
+	return days
 }

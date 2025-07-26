@@ -9,6 +9,6 @@ func CometPosition(y int) {
 	fmt.Println(Y)
 }
 
-func Parabolic() {
+func Parabolic(y, m, d int) {
 
 }

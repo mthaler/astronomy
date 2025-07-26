@@ -171,3 +171,7 @@ func days(m int) int {
 	}
 	return 0
 }
+
+func IsLeapYear(y int) bool {
+	return false
+}

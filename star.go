@@ -1,1 +1,5 @@
 package astronomy
+
+func BinaryStarOrbit() {
+
+}

@@ -53,7 +53,7 @@ func TestLocalTimeToUT(t *testing.T) {
 }
 
 func TestUTToLocalTime(t *testing.T) {
-
+	UTToLocalTime(2013, 6, 30, 22, 37, 0.0, 1, 4)
 }
 
 func TestGST(t *testing.T) {

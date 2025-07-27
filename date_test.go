@@ -36,7 +36,7 @@ func TestDecimalHour(t *testing.T) {
 }
 
 func TestDecimalHourToHourMinuteSecond(t *testing.T) {
-	/*h, m, s := DecimalHourToHourMinuteSecond(18.524167)
+	h, m, s := DecimalHourToHourMinuteSecond(18.524167)
 	S := int(s)
 	assert.Equal(t, 18, h)
 	assert.Equal(t, 31, m)
@@ -44,7 +44,7 @@ func TestDecimalHourToHourMinuteSecond(t *testing.T) {
 	h, m, s = DecimalHourToHourMinuteSecond(10.349995)
 	assert.Equal(t, 10, h)
 	assert.Equal(t, 21, m)
-	assert.Equal(t, 0, S)*/
+	assert.Equal(t, 0, S)
 }
 
 func TestLocalTimeToUT(t *testing.T) {

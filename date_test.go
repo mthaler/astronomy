@@ -52,6 +52,10 @@ func TestLocalTimeToUT(t *testing.T) {
 
 }
 
+func TestUTToLocalTime(t *testing.T) {
+
+}
+
 func TestGST(t *testing.T) {
 	/*h, m, s := GST(1980, 4, 22, 14, 36, 51.67)
 	assert.Equal(t, 4, h)

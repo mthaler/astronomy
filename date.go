@@ -150,6 +150,10 @@ func LocalTimeToUT(y, m, d, h, mm int, s float64, dstc, o int) (int, int, int, f
 	return Y, M, int(D), t
 }
 
+func UTToLocalTime() {
+
+}
+
 func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
 	jd := JulianDay(y, m, float64(d))
 	S := jd - 2451545.0

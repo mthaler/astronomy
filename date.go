@@ -119,13 +119,13 @@ func DecimalHour(h, m int, s float64) float64 {
 }
 
 func DecimalHourToHourMinuteSecond(t float64) (int, int, float64) {
-	T, f := math.Modf(t)
+	h, f := math.Modf(t)
 	if isInteger(f) {
 		f = math.Round(f)
 	}
 	m, s := math.Modf(f)
 	s = s * 60.0
-	return int(math.Round(T)), int(math.Round(m)), s
+	return int(h), int(m), s
 }
 
 func LocalTimeToUT(y, m, d, h, mm int, s float64, dstc, o int) (int, int, int, float64) {

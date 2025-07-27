@@ -139,11 +139,14 @@ func DecimalHourToHourMinuteSecond(t float64) (int, int, float64) {
 }
 
 func LocalTimeToUT(y, m, d, h, mm int, s float64, dstc, o int) (int, int, int, float64) {
-	UT := DecimalHour(h-dstc, mm, s) - float64(o)
+	hh := h - dstc
+	UT := DecimalHour(hh, mm, s)
+	UT -= float64(o)
 	GD := float64(d) + UT/24.0
 	JD := JulianDay(y, m, GD)
 	Y, M, D := JulianDayToGreenwichCalendarDate(JD)
-	t := (D - float64(int(D))) * 24.0
+	DD, _ := math.Modf(D)
+	t := (D - DD) * 24.0
 	return Y, M, int(D), t
 }
 

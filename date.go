@@ -150,7 +150,7 @@ func LocalTimeToUT(y, m, d, h, mm int, s float64, dstc, o int) (int, int, int, f
 	return Y, M, int(D), t
 }
 
-func UTToLocalTime() {
+func UTToLocalTime(y, m, d, h, mm int, s float64, dstc, o int) {
 
 }
 

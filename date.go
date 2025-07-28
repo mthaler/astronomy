@@ -150,12 +150,15 @@ func LocalTimeToUT(y, m, d, h, mm int, s float64, dstc, o int) (int, int, int, f
 	return Y, M, int(D), t
 }
 
-func UTToLocalTime(y, m, d, h, mm int, s float64, dstc, o int) (int, int, float64) {
+func UTToLocalTime(y, m, d, h, mm int, s float64, dstc, o int) (int, int, int, int, int, float64) {
 	lct := DecimalHour(h, mm, s)
 	lct += float64(o + dstc)
 	ljd := JulianDay(y, m, float64(d)) + lct/24.0
 	yy, mm, dd := JulianDayToGreenwichCalendarDate(ljd)
-	return yy, mm, dd
+	ddd, f := math.Modf(dd)
+	f *= 24.0
+	hh, mmm, ss := DecimalHourToHourMinuteSecond(f)
+	return yy, mm, int(ddd), hh, mmm, ss
 }
 
 func GST(y, m, d, h, mm int, s float64) (int, int, float64) {

@@ -53,10 +53,13 @@ func TestLocalTimeToUT(t *testing.T) {
 }
 
 func TestUTToLocalTime(t *testing.T) {
-	y, m, d := UTToLocalTime(2013, 6, 30, 22, 37, 0.0, 1, 4)
+	y, m, d, h, mm, s := UTToLocalTime(2013, 6, 30, 22, 37, 0.0, 1, 4)
 	assert.Equal(t, 2013, y)
 	assert.Equal(t, 7, m)
-	assert.Equal(t, 1, int(d))
+	assert.Equal(t, 1, d)
+	assert.Equal(t, 3, h)
+	assert.Equal(t, 37, mm)
+	assert.Equal(t, 0.0, s)
 }
 
 func TestGST(t *testing.T) {

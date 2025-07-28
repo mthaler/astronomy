@@ -187,6 +187,10 @@ func GSTToUT(y, m, d, h, mm int, s float64) (int, int, float64) {
 	return DecimalHourToHourMinuteSecond(B)
 }
 
+func LST(h, m int, s, l float64) (int, int, float64) {
+	return 0, 0, 0.0
+}
+
 func Days(m, d int) int {
 	dd := 0
 	for i := 0; i < m-1; i++ {

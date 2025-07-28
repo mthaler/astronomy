@@ -178,7 +178,9 @@ func GSTToUT(y, m, d, h, mm int, s float64) {
 	jd := JulianDay(y, m, float64(d))
 	S := jd - 2451545.0
 	T := S / 36525.0
-	fmt.Println(T)
+	T0 := 6.697374558 + (2400.051336 * T) + 0.000025862*T*T
+	T0 = normalizeTime(T0)
+	fmt.Println(T0)
 }
 
 func Days(m, d int) int {

@@ -183,11 +183,12 @@ func GSTToUT(y, m, d, h, mm int, s float64) (int, int, float64) {
 	GST := DecimalHour(h, mm, s)
 	B := normalizeTime(GST - T0)
 	B *= 0.9972695663
-	fmt.Println(T0)
 	return DecimalHourToHourMinuteSecond(B)
 }
 
 func LST(h, m int, s, l float64) (int, int, float64) {
+	GST := DecimalHour(h, m, s)
+	fmt.Println(GST)
 	return 0, 0, 0.0
 }
 

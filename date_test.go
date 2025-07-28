@@ -83,6 +83,10 @@ func TestLST(t *testing.T) {
 	assert.Equal(t, 5.230000000001169, s)
 }
 
+func TestLSTToGST(t *testing.T) {
+
+}
+
 func TestDays(t *testing.T) {
 	assert.Equal(t, 208, Days(7, 27))
 }

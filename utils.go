@@ -21,3 +21,19 @@ func normalizeTime(n float64) float64 {
 func isInteger(x float64) bool {
 	return math.Abs(x-math.Round(x)) < 0.001
 }
+
+func normalizeAngle(a float64) float64 {
+	r := a
+	for {
+		if r > 360.0 {
+			r = r - 360.0
+		}
+		if r < 0.0 {
+			r = r + 360.0
+		}
+		if r >= 0.0 && r <= 360.0 {
+			break
+		}
+	}
+	return r
+}

@@ -191,11 +191,15 @@ func LST(h, m int, s, l float64) (int, int, float64) {
 	d /= 15
 	GST = GST + d
 	GST = normalizeTime(GST)
-	return DecimalDegreesToDegreeHourMinute(GST)
+	return DecimalHourToHourMinuteSecond(GST)
 }
 
-func LSTToGST(h, m int, s, l float64) {
-
+func LSTToGST(h, m int, s, l float64) (int, int, float64) {
+	LST := DecimalHour(h, m, s)
+	d := l
+	d /= 15
+	GST := normalizeTime(LST - d)
+	return DecimalHourToHourMinuteSecond(GST)
 }
 
 func Days(m, d int) int {

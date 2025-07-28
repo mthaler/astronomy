@@ -12,6 +12,9 @@ func AngleBetween(alh, alm int, als float64, adh, adm int, ads float64, blh, blm
 	fmt.Println(d1)
 	a2 := DecimalHour(blh, blm, bls)
 	fmt.Println(a2)
+	d2 := DecimalHour(bdh, bdm, bds)
+	fmt.Println(d2)
+
 }
 
 func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int) {

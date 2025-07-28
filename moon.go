@@ -1,6 +1,6 @@
 package astronomy
 
-func Selenographic() {
+func Selenographic(y, m int, d float64) {
 
 }
 

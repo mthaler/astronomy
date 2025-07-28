@@ -12,7 +12,7 @@ func AngleBetween(alh, alm int, als float64, adh, adm int, ads float64, blh, blm
 	d2 := DecimalDegrees(bdh, bdm, bds)
 	cosd := math.Sin(d1*math.Pi/180.0)*math.Sin(d2*math.Pi/180.0) + math.Cos(d1*math.Pi/180.0)*math.Cos(d2*math.Pi/180.0)*math.Cos((a1-a2)*math.Pi/180.0*15)
 	d := math.Acos(cosd)
-	return DecimalDegreesToDegreeHourMinute(d)
+	return DecimalDegreesToDegreeHourMinute(d * 180.0 / math.Pi)
 }
 
 func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int) {

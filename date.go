@@ -1,7 +1,6 @@
 package astronomy
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -131,10 +130,10 @@ func DecimalHourToHourMinuteSecond(t float64) (int, int, float64) {
 	}
 	s = s * 60.0
 	n := s < 0
-	fmt.Println(n)
 	if n {
 		s = -s
 	}
+
 	if isInteger(s) && int(s)%60 == 0 {
 		if n {
 			n := int(s) / 60

@@ -173,7 +173,7 @@ func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
 	return DecimalHourToHourMinuteSecond(GST)
 }
 
-func GSTToUT() {
+func GSTToUT(y, m, d, h, mm int, s float64) {
 
 }
 

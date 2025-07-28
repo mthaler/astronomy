@@ -63,10 +63,10 @@ func TestUTToLocalTime(t *testing.T) {
 }
 
 func TestGST(t *testing.T) {
-    h, m, s := GST(1980, 4, 22, 14, 36, 51.67)
+	h, m, s := GST(1980, 4, 22, 14, 36, 51.67)
 	assert.Equal(t, 4, h)
 	assert.Equal(t, 40, m)
-	assert.Equal(t, 5.229576759185761, s)*/
+	assert.Equal(t, 5.229576759185761, s)
 }
 
 func TestDays(t *testing.T) {

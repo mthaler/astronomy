@@ -1,9 +1,13 @@
 package astronomy
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestCarringtonRotationNumber(t *testing.T) {
-	CarringtonRotationNumber(1975, 1, 27.0)
+	assert.Equal(t, 1624, CarringtonRotationNumber(1975, 1, 27.0))
 }
 
 func TestSunOrbit(t *testing.T) {

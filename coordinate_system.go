@@ -97,7 +97,3 @@ func GalacticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64) (int, 
 func Heliographic() {
 
 }
-
-func Selenographic() {
-
-}

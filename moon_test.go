@@ -3,5 +3,5 @@ package astronomy
 import "testing"
 
 func TestSelenographic(t *testing.T) {
-	Selenographic(1988, 5, 1.0)
+	Selenographic(1988, 5, 1.0, 209.12, -3.08)
 }

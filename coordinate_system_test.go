@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestDecinalDegreest(t *testing.T) {
+func TestDecimalDegreest(t *testing.T) {
 	assert.Equal(t, 182.52416666666667, DecimalDegrees(182, 31, 27))
 	assert.Equal(t, -8.225000, DecimalDegrees(-8, 13, 30))
 }

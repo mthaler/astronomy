@@ -8,7 +8,11 @@ import (
 func DecimalDegrees(h, m int, s float64) float64 {
 	S := s / 60.0
 	M := (float64(m) + float64(S)) / 60.0
-	return float64(h) + M
+	if h > 0 {
+		return float64(h) + M
+	} else {
+		return float64(h) - M
+	}
 }
 
 func DecimalDegreesToDegreeHourMinute(d float64) (int, int, float64) {

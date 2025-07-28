@@ -1,10 +1,14 @@
 package astronomy
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-func CarringtonRotationNumber(y, m int, d float64) {
+func CarringtonRotationNumber(y, m int, d float64) int {
 	JD := JulianDay(y, m, d)
-	fmt.Println(JD)
+	CRN := math.Round(1690.0 + (JD-2444235.34)/27.2753)
+	return int(CRN)
 }
 
 func SunOrbit() {

@@ -21,7 +21,8 @@ func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int, 
 	a *= 15.0
 	de := DecimalDegrees(dd, dm, ds)
 	fmt.Println(de)
-	cosH := (math.Sin(nu*math.Pi/180.0 + math.Sin(la*math.Pi/180.0)*math.Sin(lo*math.Pi/180.0))) / (math.Cos(la*math.Pi/180.0) * math.Cos(lo*math.Pi/180.0))
+	cosH := -(math.Sin(nu*math.Pi/180.0) + math.Sin(la*math.Pi/180.0)*math.Sin(lo*math.Pi/180.0)) / (math.Cos(la*math.Pi/180.0) * math.Cos(lo*math.Pi/180.0))
+	fmt.Println(cosH)
 	H := math.Acos(cosH)
 	H /= 15.0
 	fmt.Println(H * 180.0 / math.Pi)
@@ -70,9 +71,5 @@ func Refraction(h, m int, s float64, dd, md int, sd float64) {
 }
 
 func Parallax() {
-
-}
-
-func CarringtonRotation() {
 
 }

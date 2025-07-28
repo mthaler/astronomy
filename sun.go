@@ -2,6 +2,10 @@ package astronomy
 
 import "fmt"
 
+func CarringtonRotationNumber() {
+
+}
+
 func SunOrbit() {
 
 }

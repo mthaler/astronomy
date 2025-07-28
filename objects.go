@@ -15,13 +15,16 @@ func AngleBetween(alh, alm int, als float64, adh, adm int, ads float64, blh, blm
 	return DecimalDegreesToDegreeHourMinute(d * 180.0 / math.Pi)
 }
 
-func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int) {
+func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int, la, lo float64) {
 	nu := 34.0 / 60.0 // degrees
 	a := DecimalHour(ah, am, as)
 	a *= 15.0
 	de := DecimalDegrees(dd, dm, ds)
-	cosH := (math.Sin(nu*math.Pi/180.0 + math.Sin(a*math.Pi/180.0)*math.Sin(de*math.Pi/180.0))) / (math.Cos(a*math.Pi/180.0) * math.Cos(de*math.Pi/180.0))
-	fmt.Println(cosH)
+	fmt.Println(de)
+	cosH := (math.Sin(nu*math.Pi/180.0 + math.Sin(la*math.Pi/180.0)*math.Sin(lo*math.Pi/180.0))) / (math.Cos(la*math.Pi/180.0) * math.Cos(lo*math.Pi/180.0))
+	H := math.Acos(cosH)
+	H /= 15.0
+	fmt.Println(H * 180.0 / math.Pi)
 }
 
 func Precession(ah, am int, as float64, dd, dm int, ds float64) {

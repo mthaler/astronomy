@@ -77,7 +77,10 @@ func TestGSTToUT(t *testing.T) {
 }
 
 func TestLST(t *testing.T) {
-	LST(4, 40, 5.23, 64.0)
+	h, m, s := LST(4, 40, 5.23, -64.0)
+	assert.Equal(t, 0, h)
+	assert.Equal(t, 24, m)
+	assert.Equal(t, 5.230000000001169, s)
 }
 
 func TestDays(t *testing.T) {

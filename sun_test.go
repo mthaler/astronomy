@@ -3,7 +3,7 @@ package astronomy
 import "testing"
 
 func TestCarringtonRotationNumber(t *testing.T) {
-	CarringtonRotationNumber()
+	CarringtonRotationNumber(1975, 1, 27.0)
 }
 
 func TestSunOrbit(t *testing.T) {

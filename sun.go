@@ -2,8 +2,9 @@ package astronomy
 
 import "fmt"
 
-func CarringtonRotationNumber() {
-
+func CarringtonRotationNumber(y, m int, d float64) {
+	JD := JulianDay(y, m, d)
+	fmt.Println(JD)
 }
 
 func SunOrbit() {

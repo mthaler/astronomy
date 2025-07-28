@@ -84,7 +84,7 @@ func TestLST(t *testing.T) {
 }
 
 func TestLSTToGST(t *testing.T) {
-
+	LSTToGST(0, 24, 5.23, -64.0)
 }
 
 func TestDays(t *testing.T) {

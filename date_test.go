@@ -70,7 +70,7 @@ func TestGST(t *testing.T) {
 }
 
 func TestGSTToUT(t *testing.T) {
-
+	GSTToUT(1980, 4, 22, 4, 40, 5.23)
 }
 
 func TestDays(t *testing.T) {

@@ -70,7 +70,10 @@ func TestGST(t *testing.T) {
 }
 
 func TestGSTToUT(t *testing.T) {
-	GSTToUT(1980, 4, 22, 4, 40, 5.23)
+	h, m, s := GSTToUT(1980, 4, 22, 4, 40, 5.23)
+	assert.Equal(t, 14, h)
+	assert.Equal(t, 36, m)
+	assert.Equal(t, 51.67040214530175, s)
 }
 
 func TestDays(t *testing.T) {

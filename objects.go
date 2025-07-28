@@ -5,16 +5,14 @@ import (
 	"math"
 )
 
-func AngleBetween(alh, alm int, als float64, adh, adm int, ads float64, blh, blm int, bls float64, bdh, bdm int, bds float64) {
+func AngleBetween(alh, alm int, als float64, adh, adm int, ads float64, blh, blm int, bls float64, bdh, bdm int, bds float64) (int, int, float64) {
 	a1 := DecimalHour(alh, alm, als)
-	fmt.Println(a1)
 	d1 := DecimalDegrees(adh, adm, ads)
-	fmt.Println(d1)
 	a2 := DecimalHour(blh, blm, bls)
-	fmt.Println(a2)
 	d2 := DecimalDegrees(bdh, bdm, bds)
-	fmt.Println(d2)
-
+	cosd := math.Sin(d1*math.Pi/180.0)*math.Sin(d2*math.Pi/180.0) + math.Cos(d1*math.Pi/180.0)*math.Cos(d2*math.Pi/180.0)*math.Cos((a1-a2)*math.Pi/180.0*15)
+	d := math.Acos(cosd)
+	return DecimalDegreesToDegreeHourMinute(d)
 }
 
 func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int) {

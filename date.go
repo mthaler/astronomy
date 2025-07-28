@@ -130,13 +130,13 @@ func DecimalHourToHourMinuteSecond(t float64) (int, int, float64) {
 		s = math.Round(s)
 	}
 	s = s * 60.0
-	negative := s < 0
-	fmt.Println(negative)
-	if negative {
+	n := s < 0
+	fmt.Println(n)
+	if n {
 		s = -s
 	}
 	if isInteger(s) && int(s)%60 == 0 {
-		if negative {
+		if n {
 			n := int(s) / 60
 			m -= float64(n)
 			s = 0.0

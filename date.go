@@ -202,10 +202,6 @@ func LSTToGST(h, m int, s, l float64) (int, int, float64) {
 	return DecimalHourToHourMinuteSecond(GST)
 }
 
-func ETToTT() {
-
-}
-
 func Days(m, d int) int {
 	dd := 0
 	for i := 0; i < m-1; i++ {

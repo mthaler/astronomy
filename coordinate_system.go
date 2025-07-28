@@ -75,12 +75,14 @@ func HorizontalToEquatorial(h, m int, s float64, hh, mm int, ss, l float64) (int
 	return h2, m2, s2, h3, m3, s3
 }
 
-func EclipticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64, y, m int, d float64) {
-	l := DecimalDegrees(ld, lm, ls)
-	b := DecimalDegrees(bd, bm, bs)
-	e := 23.438055
-	sind := math.Sin(b*math.Pi/180.0)*math.Sin(e*math.Pi/180.0) + math.Cos(b*math.Pi/180.0)*math.Sin(e*math.Pi/180.0)*math.Sin(l*math.Pi/180.0)
-	fmt.Println(sind)
+func EclipticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64, y, m int, d float64) (int, int, float64) {
+	JD := JulianDay(y, m, d)
+	MJD := JD - 2451545.0
+	T := MJD / 36525.0
+	DE := 46.815*T + 0.0006*T*T - 0.00181*T*T*T
+	DE /= 3600.0
+	e := 23.439292 - DE
+	return DecimalDegreesToDegreeHourMinute(e)
 }
 
 func MeanObliquity(y, m int, d float64) (int, int, float64) {

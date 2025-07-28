@@ -194,7 +194,7 @@ func LST(h, m int, s, l float64) (int, int, float64) {
 	return DecimalDegreesToDegreeHourMinute(GST)
 }
 
-func LSTToGST() {
+func LSTToGST(h, m int, s, l float64) {
 
 }
 

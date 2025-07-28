@@ -173,6 +173,10 @@ func GST(y, m, d, h, mm int, s float64) (int, int, float64) {
 	return DecimalHourToHourMinuteSecond(GST)
 }
 
+func GSTToUT() {
+
+}
+
 func Days(m, d int) int {
 	dd := 0
 	for i := 0; i < m-1; i++ {

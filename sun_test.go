@@ -25,3 +25,7 @@ func TestSunriseSunset(t *testing.T) {
 func TestTwilight(t *testing.T) {
 	Twilight()
 }
+
+func TestTime(t *testing.T) {
+	Time()
+}

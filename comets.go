@@ -1,13 +1,17 @@
 package astronomy
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 const CometEpoch = 1986.112
 
 func CometPosition(y int, Tp float64) {
 	Y := float64(y) - CometEpoch
-	fmt.Println(Y)
-	Mc := 360.0 * float64(y) / Tp
+	Mc := 360.0 * Y / Tp
+	Mc = normalizeAngle(Mc)
+	Mc = Mc * math.Pi / 180.0
 	fmt.Println(Mc)
 }
 

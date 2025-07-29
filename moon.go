@@ -23,3 +23,7 @@ func MoonPhases() {
 func MoonDistance() {
 
 }
+
+func MoonriseMoonset() {
+
+}

@@ -12,7 +12,7 @@ func Selenographic(y, m int, d, lo, la float64) {
 	fmt.Println(F)
 }
 
-func MoonPosition() {
+func MoonPosition(y, m, d float64) {
 
 }
 

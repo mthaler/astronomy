@@ -3,7 +3,7 @@ package astronomy
 import "testing"
 
 func TestCometPosition(t *testing.T) {
-	CometPosition(1984)
+	CometPosition(1984, 76.0081)
 }
 
 func TestParabolic(t *testing.T) {

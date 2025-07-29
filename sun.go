@@ -59,7 +59,9 @@ func SunPosition(y, m, d, h, mm int, s float64) {
 		M += 360
 	}
 	Ec := 360.0 / math.Pi * e * math.Sin(M*math.Pi/180.0)
-	fmt.Println(Ec)
+	l := N + Ec + eg
+	l = normalizeAngle(l)
+	fmt.Println(l)
 }
 
 func SunDistance() {

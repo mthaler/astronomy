@@ -16,6 +16,10 @@ func PlanetDistance() {
 
 }
 
+func PlanetLightTravelTime() {
+
+}
+
 func PlanetPhases() {
 
 }

@@ -12,8 +12,27 @@ func Selenographic(y, m int, d, lo, la float64) {
 	fmt.Println(F)
 }
 
-func MoonPosition(y, m, d float64) {
-
+func MoonPosition(y, m, d int) {
+	D := Days(m, d)
+	if y >= 2010 {
+		for yy := y; yy > 2010; yy-- {
+			if IsLeapYear(yy) {
+				D += 366
+			} else {
+				D += 365
+			}
+		}
+	}
+	if y <= 2010 {
+		for yy := y; yy < 2010; yy++ {
+			if IsLeapYear(yy) {
+				D -= 366
+			} else {
+				D -= 365
+			}
+		}
+	}
+	fmt.Println(D)
 }
 
 func MoonPhases() {

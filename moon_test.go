@@ -13,3 +13,7 @@ func TestMoonPhases(t *testing.T) {
 func TestMoonDistance(t *testing.T) {
 	MoonDistance()
 }
+
+func TestMoonriseMoonset(t *testing.T) {
+	MoonriseMoonset()
+}

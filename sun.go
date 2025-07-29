@@ -52,3 +52,7 @@ func Time() {
 func SolarElongations() {
 
 }
+
+func SolarEclipse() {
+
+}

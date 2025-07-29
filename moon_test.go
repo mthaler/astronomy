@@ -9,3 +9,7 @@ func TestSelenographic(t *testing.T) {
 func TestMoonPhases(t *testing.T) {
 	MoonPhases()
 }
+
+func TestMoonDistance(t *testing.T) {
+	MoonDistance()
+}

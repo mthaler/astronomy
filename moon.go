@@ -19,3 +19,7 @@ func MoonPosition() {
 func MoonPhases() {
 
 }
+
+func MoonDistance() {
+
+}

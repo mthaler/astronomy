@@ -1,9 +1,5 @@
 package astronomy
 
-func PlanetCoodinates() {
-
-}
-
 func PlanetPerturbations() {
 
 }

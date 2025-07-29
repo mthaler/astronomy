@@ -33,3 +33,7 @@ func TestTime(t *testing.T) {
 func TestSolarElongations(t *testing.T) {
 	SolarElongations()
 }
+
+func TestSolarEclipse(t *testing.T) {
+	SolarEclipse()
+}

@@ -30,6 +30,25 @@ func SunPosition(y, m, d, h, mm int, s float64) {
 			D -= 365
 		}
 	}
+	if y >= 2010 {
+		for yy := y; yy > 2010; yy-- {
+			if IsLeapYear(yy) {
+				D += 366
+			} else {
+				D += 365
+			}
+		}
+	}
+	if y <= 2010 {
+		for yy := y; yy < 2010; yy++ {
+			if IsLeapYear(yy) {
+				D -= 366
+			} else {
+				D -= 365
+			}
+		}
+	}
+
 	fmt.Println(D)
 }
 

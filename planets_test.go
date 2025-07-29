@@ -13,3 +13,7 @@ func TestPlanetPosition(t *testing.T) {
 func TestPlanetPerturbations(t *testing.T) {
 	PlanetPerturbations()
 }
+
+func TestPlanetDistance(t *testing.T) {
+	PlanetDistance()
+}

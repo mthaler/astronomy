@@ -4,7 +4,8 @@ import "fmt"
 
 const StarEpoch = 1934.008
 
-func BinaryStarOrbit(y, m, d int) {
+func BinaryStarOrbit(y, m, d int, T float64) {
 	Y := float64(y) - StarEpoch
-	fmt.Println(Y)
+	M := 360.0 * Y / T
+	fmt.Println(M)
 }

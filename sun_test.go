@@ -27,7 +27,7 @@ func TestTwilight(t *testing.T) {
 }
 
 func TestTime(t *testing.T) {
-	Time()
+	Time(2010, 7, 27.0)
 }
 
 func TestSolarElongations(t *testing.T) {

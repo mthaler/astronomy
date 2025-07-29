@@ -1,9 +1,5 @@
 package astronomy
 
-func PlanetPerturbations() {
-
-}
-
 func PlanetDistance() {
 
 }

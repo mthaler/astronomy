@@ -10,9 +10,12 @@ func Selenographic(y, m int, d, lo, la float64) {
 	F := 93.271910 + 483202.0175*T
 	F = normalizeAngle(F)
 	fmt.Println(F)
-	sinbe := 
 }
 
 func MoonPosition() {
+
+}
+
+func MoonPhases() {
 
 }

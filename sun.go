@@ -5,6 +5,9 @@ import (
 	"math"
 )
 
+const eg = 279.557208
+const og = 283.112438
+
 func CarringtonRotationNumber(y, m int, d float64) int {
 	JD := JulianDay(y, m, d)
 	CRN := math.Round(1690.0 + (JD-2444235.34)/27.2753)
@@ -48,8 +51,13 @@ func SunPosition(y, m, d, h, mm int, s float64) {
 			}
 		}
 	}
-
-	fmt.Println(D)
+	N := 360.0 / 365.242191 * float64(D)
+	N = normalizeAngle(N)
+	M := N + eg - og
+	if M < 0 {
+		M += 360
+	}
+	fmt.Println(M)
 }
 
 func SunDistance() {

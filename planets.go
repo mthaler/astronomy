@@ -4,10 +4,6 @@ func PlanetCoodinates() {
 
 }
 
-func PlanetPosition() {
-
-}
-
 func PlanetPerturbations() {
 
 }

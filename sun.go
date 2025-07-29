@@ -7,6 +7,7 @@ import (
 
 const eg = 279.557208
 const og = 283.112438
+const e = 0.016705
 
 func CarringtonRotationNumber(y, m int, d float64) int {
 	JD := JulianDay(y, m, d)
@@ -57,7 +58,8 @@ func SunPosition(y, m, d, h, mm int, s float64) {
 	if M < 0 {
 		M += 360
 	}
-	fmt.Println(M)
+	Ec := 360.0 / math.Pi * e * math.Sin(M*math.Pi/180.0)
+	fmt.Println(Ec)
 }
 
 func SunDistance() {

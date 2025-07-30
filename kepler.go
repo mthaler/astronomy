@@ -1,7 +1,6 @@
 package astronomy
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -17,12 +16,8 @@ func kepler(E0, e, M float64) float64 {
 		if math.Abs(d) <= ep {
 			return E
 		} else {
-			fmt.Println(E)
-			for {
-				DE := d / (1 - e*math.Cos(E0))
-				E = E - DE
-			}
+			DE := d / (1 - e*math.Cos(E0))
+			E = E - DE
 		}
 	}
-
 }

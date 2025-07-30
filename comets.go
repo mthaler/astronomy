@@ -12,11 +12,12 @@ func CometPosition(y int, Tp float64) {
 	Mc := 360.0 * Y / Tp
 	Mc = normalizeAngle(Mc)
 	Mc = Mc * math.Pi / 180.0
-	E := kepler(Mc-0.8, 0.9673, Mc)
+	//E := kepler(Mc-0.8, 0.9673, Mc)
 	fmt.Println(Mc)
-	fmt.Println(E)
+	//fmt.Println(E)
 }
 
 func Parabolic(y, m, d int) {
-
+	D := float64(JulianDay(y, m, float64(d)) - JulianDay(1977, 11, 10.0) + 1)
+	fmt.Println(D)
 }

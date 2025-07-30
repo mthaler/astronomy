@@ -13,7 +13,9 @@ func BinaryStarOrbit(y, m, d int, T, e float64) {
 	M = normalizeAngle(M)
 	M = M * math.Pi / 180.0
 	E0 := 0.86
-	fmt.Println(E0)
 	E := kepler(E0, e, M)
-	fmt.Println(E)
+	nu := 2 * math.Atan(math.Sqrt((1+e)/(1-e))*math.Tan(E/2))
+	nu *= 180.0 / math.Pi
+	r := a * (1 - e*math.Cos(E))
+	fmt.Println(r)
 }

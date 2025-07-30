@@ -7,7 +7,7 @@ import (
 
 const StarEpoch = 1934.008
 
-func BinaryStarOrbit(y, m, d int, T, e float64) {
+func BinaryStarOrbit(y, m, d int, T, e, a float64) {
 	Y := float64(y) - StarEpoch
 	M := 360.0 * Y / T
 	M = normalizeAngle(M)

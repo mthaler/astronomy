@@ -15,10 +15,13 @@ func TestSunOrbit(t *testing.T) {
 }
 
 func TestSunPosition(t *testing.T) {
-	h, m, s := SunPosition(2003, 7, 27, 0, 0, 0.0)
-	assert.Equal(t, 8, h)
-	assert.Equal(t, 23, m)
-	assert.Equal(t, 34, s)
+	ah, am, as, dd, dm, ds := SunPosition(2003, 7, 27, 0, 0, 0.0)
+	assert.Equal(t, 8, ah)
+	assert.Equal(t, 23, am)
+	assert.Equal(t, 34.0, as)
+	assert.Equal(t, 19, dd)
+	assert.Equal(t, 21, dm)
+	assert.Equal(t, 10.0, ds)
 }
 
 func TestSunriseSunset(t *testing.T) {

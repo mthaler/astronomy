@@ -12,7 +12,9 @@ func CometPosition(y int, Tp float64) {
 	Mc := 360.0 * Y / Tp
 	Mc = normalizeAngle(Mc)
 	Mc = Mc * math.Pi / 180.0
+	E := kepler(Mc-0.8, 0.9673, Mc)
 	fmt.Println(Mc)
+	fmt.Println(E)
 }
 
 func Parabolic(y, m, d int) {

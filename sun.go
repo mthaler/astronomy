@@ -1,7 +1,6 @@
 package astronomy
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -61,9 +60,9 @@ func SunPosition(y, m, d, h, mm int, s float64) (int, int, float64) {
 	Ec := 360.0 / math.Pi * e * math.Sin(M*math.Pi/180.0)
 	l := N + Ec + eg
 	l = normalizeAngle(l)
-	fmt.Println(l)
 	a := math.Atan((math.Sin(l*math.Pi/180.0)*math.Cos(e*math.Pi/180.0) - math.Tan(0.0)) / math.Cos(l*math.Pi/180.0))
-	return DecimalDegreesToDegreeHourMinute(a)
+	ah, am, as := DecimalDegreesToDegreeHourMinute(a * 180 / math.Pi)
+	return ah, am, as
 }
 
 func SunDistance() {

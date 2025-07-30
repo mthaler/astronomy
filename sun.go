@@ -60,9 +60,9 @@ func SunPosition(y, m, d, h, mm int, s float64) (int, int, float64, int, int, fl
 	Ec := 360.0 / math.Pi * e * math.Sin(M*math.Pi/180.0)
 	l := N + Ec + eg
 	l = normalizeAngle(l)
-	a := math.Atan((math.Sin(l*math.Pi/180.0)*math.Cos(e*math.Pi/180.0) - math.Tan(0.0)) / math.Cos(l*math.Pi/180.0))
+	a := math.Atan((math.Sin(l*math.Pi/180.0)*math.Cos(e) - math.Tan(0.0)) / math.Cos(l*math.Pi/180.0))
 	ah, am, as := DecimalDegreesToDegreeHourMinute(a * 180 / math.Pi)
-	de := math.Asin(math.Sin(0.0)*math.Cos(e*math.Pi/180.0) + math.Cos(0.0)*math.Sin(e*math.Pi/180.0)*math.Sin(l*math.Pi/180.0))
+	de := math.Asin(math.Sin(0.0)*math.Cos(e) + math.Cos(0.0)*math.Sin(e)*math.Sin(l*math.Pi/180.0))
 	dd, dm, ds := DecimalHourToHourMinuteSecond(de)
 	return ah, am, as, dd, dm, ds
 }

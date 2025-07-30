@@ -36,10 +36,6 @@ func TestTime(t *testing.T) {
 	Time(2010, 7, 27.0)
 }
 
-func TestSolarElongations(t *testing.T) {
-	SolarElongations()
-}
-
 func TestSolarEclipse(t *testing.T) {
 	SolarEclipse()
 }

@@ -83,10 +83,6 @@ func Time(y, m int, s float64) {
 	RightAscension(0, 0, 0.0)
 }
 
-func SolarElongations() {
-
-}
-
 func SolarEclipse() {
 
 }

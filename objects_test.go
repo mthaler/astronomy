@@ -17,7 +17,3 @@ func TestAngleBetween(t *testing.T) {
 func TestRisingSetting(t *testing.T) {
 	RisingSetting(23, 39, 20.0, 21, 42, 0.0, 2010, 8, 24, 30.0, 64.0)
 }
-
-func TestRefraction(t *testing.T) {
-	Refraction(5, 51, 44.0, 23, 13, 10.0)
-}

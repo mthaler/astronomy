@@ -3,7 +3,6 @@ package astronomy
 import (
 	"fmt"
 	"math"
-	"testing"
 )
 
 func Precession(ah, am int, as float64, dd, dm int, ds float64) {
@@ -48,8 +47,6 @@ func Aberration(ld, lm int, ls float64, bd, bm int, bs float64, sd, sm int, ss f
 func Refraction(h, m int, s float64, dd, md int, sd float64) {
 	a := DecimalHour(h, m, s)
 	fmt.Println(a)
-}
-
-func TestRefraction(t *testing.T) {
-	Refraction(5, 51, 44.0, 23, 13, 10.0)
+	A := DecimalDegrees(dd, md, sd)
+	fmt.Println(A)
 }

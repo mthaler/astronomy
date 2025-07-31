@@ -6,12 +6,16 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestHeliographic(t *testing.T) {
-	Heliographic()
+func TestSunLongitude(t *testing.T) {
+	sunLongitude()
 }
 
 func TestCarringtonRotationNumber(t *testing.T) {
 	assert.Equal(t, 1624, CarringtonRotationNumber(1975, 1, 27.0))
+}
+
+func TestHeliographic(t *testing.T) {
+	Heliographic(40, 50, 37.0)
 }
 
 func TestSunOrbit(t *testing.T) {

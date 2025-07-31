@@ -102,3 +102,26 @@ func Time(y, m int, s float64) {
 func SolarEclipse() {
 
 }
+
+func days2(y, m, d int) int {
+	D := Days(m, d)
+	if y >= 2010 {
+		for yy := y; yy > 2010; yy-- {
+			if IsLeapYear(yy) {
+				D += 366
+			} else {
+				D += 365
+			}
+		}
+	}
+	if y <= 2010 {
+		for yy := y; yy < 2010; yy++ {
+			if IsLeapYear(yy) {
+				D -= 366
+			} else {
+				D -= 365
+			}
+		}
+	}
+	return D
+}

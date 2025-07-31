@@ -80,6 +80,7 @@ func SunPosition(y, m, d, h, mm int, s float64) (int, int, float64, int, int, fl
 }
 
 func SunDistance(y, m int, d float64) {
+	D := JulianDay(2010, 1, 0.0) - JulianDay(y, m, d)
 	M := 360.0/365.242191*D + eg + og
 	M = normalizeAngle(M)
 	M *= math.Pi / 180.0
@@ -101,27 +102,4 @@ func Time(y, m int, s float64) {
 
 func SolarEclipse() {
 
-}
-
-func days2(y, m, d int) int {
-	D := Days(m, d)
-	if y >= 2010 {
-		for yy := y; yy > 2010; yy-- {
-			if IsLeapYear(yy) {
-				D += 366
-			} else {
-				D += 365
-			}
-		}
-	}
-	if y <= 2010 {
-		for yy := y; yy < 2010; yy++ {
-			if IsLeapYear(yy) {
-				D -= 366
-			} else {
-				D -= 365
-			}
-		}
-	}
-	return D
 }

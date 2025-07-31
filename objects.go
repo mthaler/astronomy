@@ -28,22 +28,6 @@ func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int, 
 	fmt.Println(H * 180.0 / math.Pi)
 }
 
-func Precession(ah, am int, as float64, dd, dm int, ds float64) {
-	a := DecimalHour(ah, am, as)
-	ad := a * 15
-	fmt.Println(ad)
-	d := DecimalDegrees(dd, dm, ds)
-	N := 29.5
-	S := (3.07327 + 1.33617*math.Sin(a*math.Pi/180.0)*math.Tan(d*math.Pi/180.0)) * N
-	S = S / 3600.0
-	a1 := S + a
-	h, m, s := DecimalHourToHourMinuteSecond(a1)
-	fmt.Println(a1)
-	fmt.Println(h)
-	fmt.Println(m)
-	fmt.Println(s)
-}
-
 func Aberration(ld, lm int, ls float64, bd, bm int, bs float64, sd, sm int, ss float64) {
 	l := DecimalDegrees(ld, lm, ls)
 	b := DecimalDegrees(bd, bm, bs)

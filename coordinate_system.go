@@ -67,7 +67,8 @@ func EquatorialToEcliptic(ah, am int, as float64, dd, dm int, ds float64) {
 	d := DecimalDegrees(dd, dm, ds)
 	e := 23.438055
 	sinb := math.Sin(d*math.Pi/180.0)*math.Cos(e*math.Pi/180.0) - math.Cos(d*math.Pi/180.0)*math.Sin(e*math.Pi/180.0)*math.Sin(a*math.Pi/180.0)
-	fmt.Println(sinb)
+	b := math.Asin(sinb)
+	fmt.Println(b * 180.0 / math.Pi)
 }
 
 func EquatorialToGalactic(ah, am int, as float64, dd, dm int, ds float64) (int, int, float64, int, int, float64) {

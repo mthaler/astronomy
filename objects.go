@@ -28,11 +28,6 @@ func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int, 
 	fmt.Println(H * 180.0 / math.Pi)
 }
 
-func Refraction(h, m int, s float64, dd, md int, sd float64) {
-	a := DecimalHour(h, m, s)
-	fmt.Println(a)
-}
-
 func Parallax() {
 
 }

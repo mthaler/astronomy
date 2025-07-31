@@ -8,6 +8,10 @@ const eg = 279.557208
 const og = 283.112438
 const e = 0.016705
 
+func Heliographic() {
+
+}
+
 func CarringtonRotationNumber(y, m int, d float64) int {
 	JD := JulianDay(y, m, d)
 	CRN := math.Round(1690.0 + (JD-2444235.34)/27.2753)

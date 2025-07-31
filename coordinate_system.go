@@ -103,7 +103,3 @@ func GalacticToEquatorial(ld, lm int, ls float64, bd, bm int, bs float64) (int, 
 	dh, dm, ds := DecimalDegreesToDegreeHourMinute(d * 180.0 / math.Pi)
 	return ah, am, as, dh, dm, ds
 }
-
-func Heliographic() {
-
-}

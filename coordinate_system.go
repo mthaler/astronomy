@@ -61,8 +61,9 @@ func MeanObliquity(y, m int, d float64) (int, int, float64) {
 	return DecimalDegreesToDegreeHourMinute(e)
 }
 
-func EquatorialToEcliptic(ah, am int, as float64) {
+func EquatorialToEcliptic(ah, am int, as float64, dd, dm int, ds float64) {
 	a := DecimalHour(ah, am, as)
+	a *= 15.0
 	fmt.Println(a)
 }
 

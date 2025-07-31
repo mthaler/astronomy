@@ -64,9 +64,10 @@ func MeanObliquity(y, m int, d float64) (int, int, float64) {
 func EquatorialToEcliptic(ah, am int, as float64, dd, dm int, ds float64) {
 	a := DecimalHour(ah, am, as)
 	a *= 15.0
-	fmt.Println(a)
 	d := DecimalDegrees(dd, dm, ds)
-	fmt.Println(d)
+	e := 23.438055
+	sinb := math.Sin(d*math.Pi/180.0)*math.Cos(e*math.Pi/180.0) - math.Cos(d*math.Pi/180.0)*math.Sin(e*math.Pi/180.0)*math.Sin(a*math.Pi/180.0)
+	fmt.Println(sinb)
 }
 
 func EquatorialToGalactic(ah, am int, as float64, dd, dm int, ds float64) (int, int, float64, int, int, float64) {

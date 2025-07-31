@@ -18,10 +18,6 @@ func TestRisingSetting(t *testing.T) {
 	RisingSetting(23, 39, 20.0, 21, 42, 0.0, 2010, 8, 24, 30.0, 64.0)
 }
 
-func TestAberration(t *testing.T) {
-	Aberration(352, 37, 10.1, -1, 32, 56.4, 165, 33, 44.1)
-}
-
 func TestRefraction(t *testing.T) {
 	Refraction(5, 51, 44.0, 23, 13, 10.0)
 }

@@ -28,15 +28,6 @@ func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int, 
 	fmt.Println(H * 180.0 / math.Pi)
 }
 
-func Aberration(ld, lm int, ls float64, bd, bm int, bs float64, sd, sm int, ss float64) {
-	l := DecimalDegrees(ld, lm, ls)
-	b := DecimalDegrees(bd, bm, bs)
-	s := DecimalDegrees(sd, sm, ss)
-	fmt.Println(l)
-	fmt.Println(b)
-	fmt.Println(s)
-}
-
 func Refraction(h, m int, s float64, dd, md int, sd float64) {
 	a := DecimalHour(h, m, s)
 	fmt.Println(a)

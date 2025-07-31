@@ -15,3 +15,7 @@ func TestNutation(t *testing.T) {
 	assert.Equal(t, 5.49291620725019, DP)
 	assert.Equal(t, 9.241559684661622, De)
 }
+
+func TestAberration(t *testing.T) {
+	Aberration(352, 37, 10.1, -1, 32, 56.4, 165, 33, 44.1)
+}

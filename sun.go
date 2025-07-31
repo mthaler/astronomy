@@ -1,6 +1,7 @@
 package astronomy
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -78,8 +79,9 @@ func SunPosition(y, m, d, h, mm int, s float64) (int, int, float64, int, int, fl
 	return ah, am, as, dd, dm, ds
 }
 
-func SunDistance() {
-
+func SunDistance(D float64) {
+	M := 360.0/365.242191*D + eg + og
+	fmt.Println(M)
 }
 
 func SunriseSunset() {

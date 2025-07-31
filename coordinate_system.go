@@ -73,7 +73,8 @@ func EquatorialToEcliptic(ah, am int, as float64, dd, dm int, ds float64) (int, 
 	fmt.Println(b * 180.0 / math.Pi)
 	l := math.Atan(y / x)
 	l += math.Pi
-	return DecimalDegreesToDegreeHourMinute(l * 180 / math.Pi)
+	dl, hl, ml := DecimalDegreesToDegreeHourMinute(l * 180 / math.Pi)
+	return dl, hl, ml
 }
 
 func EquatorialToGalactic(ah, am int, as float64, dd, dm int, ds float64) (int, int, float64, int, int, float64) {

@@ -40,4 +40,6 @@ func Aberration(ld, lm int, ls float64, bd, bm int, bs float64, sd, sm int, ss f
 	fmt.Println(l)
 	fmt.Println(b)
 	fmt.Println(s)
+	//Dl := -20.5 * math.Cos(ls-l) / math.Cos(b*math.Pi/180)
+	//fmt.Println(Dl)
 }

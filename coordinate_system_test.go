@@ -42,10 +42,13 @@ func TestMeanObliquity(t *testing.T) {
 }
 
 func TestEquatorialToEcliptic(t *testing.T) {
-	dl, hl, ml := EquatorialToEcliptic(9, 34, 53.32, 19, 32, 6.01)
+	dl, hl, ml, db, hb, mb := EquatorialToEcliptic(9, 34, 53.32, 19, 32, 6.01)
 	assert.Equal(t, 139, dl)
 	assert.Equal(t, 41, hl)
 	assert.Equal(t, 9.98120330850952, ml)
+	assert.Equal(t, 4, db)
+	assert.Equal(t, 52, hb)
+	assert.Equal(t, 30.992980767144616, mb)
 }
 
 func TestEquatorialToGalactic(t *testing.T) {

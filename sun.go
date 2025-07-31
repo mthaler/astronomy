@@ -79,9 +79,12 @@ func SunPosition(y, m, d, h, mm int, s float64) (int, int, float64, int, int, fl
 	return ah, am, as, dd, dm, ds
 }
 
-func SunDistance(D float64) {
+func SunDistance(y, m int, d float64) {
 	M := 360.0/365.242191*D + eg + og
-	fmt.Println(M)
+	M = normalizeAngle(M)
+	M *= math.Pi / 180.0
+	nu := M + 360.0/math.Pi*e*math.Sin(M)
+	fmt.Println(nu)
 }
 
 func SunriseSunset() {

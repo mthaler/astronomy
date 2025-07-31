@@ -32,6 +32,10 @@ func TestSunPosition(t *testing.T) {
 	assert.Equal(t, 10.0, ds)
 }
 
+func TestSunDistance(t *testing.T) {
+	SunDistance(1988, 7, 27.0)
+}
+
 func TestSunriseSunset(t *testing.T) {
 	SunriseSunset()
 }

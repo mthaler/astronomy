@@ -7,7 +7,7 @@ import (
 )
 
 func TestSunLongitude(t *testing.T) {
-	sunLongitude()
+	assert.Equal(t, 272.751601885035, sunLongitude(0.0))
 }
 
 func TestCarringtonRotationNumber(t *testing.T) {

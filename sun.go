@@ -8,6 +8,9 @@ const eg = 279.557208
 const og = 283.112438
 const e = 0.016705
 
+/*
+D is the number of days since the epoch 2010.0
+*/
 func sunLongitude(D float64) float64 {
 	return 360.0/365.242191*D + 360.0/math.Pi*e*(360.0/365.242191*D+eg-og) + eg
 }

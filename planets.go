@@ -11,7 +11,7 @@ const oe = 103.2055
 const ee = 0.016671
 const ae = 0.999985
 
-func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a float64) {
+func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i float64) {
 	D := JulianDay(y, m, d) - JulianDay(2010, 1, 0.0)
 	Np := 360.0 / 365.242191 * D / Tp
 	Np = normalizeAngle(Np)

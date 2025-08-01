@@ -21,7 +21,8 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a float64) {
 	fmt.Println(r)
 	Ne := 360.0 / 365.242191 * D / Te
 	Ne = normalizeAngle(Ne)
-	Me := Ne + epe + oe
+	Me := Ne + epe - oe
+	Me = normalizeAngle(Me)
 	fmt.Println(Me)
 
 }

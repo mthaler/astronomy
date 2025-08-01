@@ -19,7 +19,6 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i, O float64) {
 	nup := Mp + 360.0/math.Pi*e*math.Sin(Mp*math.Pi/180.0)
 	nup = normalizeAngle(nup)
 	r := a * (1 - e*e) / (1 + e*math.Cos(nup*math.Pi/180.0))
-	fmt.Println(r)
 	Ne := 360.0 / 365.242191 * D / Te
 	Ne = normalizeAngle(Ne)
 	Me := Ne + epe - oe
@@ -28,14 +27,15 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i, O float64) {
 	L := nue + oe
 	L = normalizeAngle(L)
 	R := ae * (1 - ee*ee) / (1 + ee*math.Cos(nue*math.Pi/180.0))
-	fmt.Println(R)
 	Lp := nup + o
 	P := math.Asin(math.Sin((Lp-O)*math.Pi/180.0) * math.Sin(i*math.Pi/180.0))
-	fmt.Println(P * 180.0 / math.Pi)
 	yy := math.Sin((Lp-O)*math.Pi/180.0) * math.Cos(i*math.Pi/180.0)
 	x := math.Cos((Lp - O) * math.Pi / 180.0)
-	l := math.Atan(yy/x) + O
-	fmt.Println(l)
+	l := math.Atan(yy/x)*180.0/math.Pi + O
+	r2 := r * math.Cos(P*math.Pi/180.0)
+	la := math.Atan(R*math.Sin((l-Lp)*math.Pi/180.0)/(r2-R*math.Cos((l-Lp)*math.Pi/180.0)))*180/math.Pi + l
+	la = normalizeAngle(la)
+	fmt.Println(la)
 }
 
 func PlanetDistance() {

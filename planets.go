@@ -29,6 +29,8 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i float64) {
 	L = normalizeAngle(L)
 	R := ae * (1 - ee*ee) / (1 + ee*math.Cos(nue*math.Pi/180.0))
 	fmt.Println(R)
+	lp := nup + o
+	fmt.Println(lp)
 }
 
 func PlanetDistance() {

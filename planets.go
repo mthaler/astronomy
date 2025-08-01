@@ -6,7 +6,8 @@ import (
 )
 
 const Te = 0.999996
-const ee = 99.556772
+const epe = 99.556772
+const ee = 0.016671
 
 func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a float64) {
 	D := JulianDay(y, m, d) - JulianDay(2010, 1, 0.0)

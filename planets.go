@@ -31,7 +31,11 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i, O float64) {
 	fmt.Println(R)
 	Lp := nup + o
 	P := math.Asin(math.Sin((Lp-O)*math.Pi/180.0) * math.Sin(i*math.Pi/180.0))
-	fmt.Println(P)
+	fmt.Println(P * 180.0 / math.Pi)
+	yy := math.Sin((Lp-O)*math.Pi/180.0) * math.Cos(i*math.Pi/180.0)
+	x := math.Cos((Lp - O) * math.Pi / 180.0)
+	l := math.Atan(yy/x) + O
+	fmt.Println(l)
 }
 
 func PlanetDistance() {

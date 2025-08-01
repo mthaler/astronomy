@@ -6,6 +6,7 @@ import (
 )
 
 const Te = 0.999996
+const ee = 99.556772
 
 func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a float64) {
 	D := JulianDay(y, m, d) - JulianDay(2010, 1, 0.0)
@@ -17,6 +18,7 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a float64) {
 	r := a * (1 - e*e) / (1 + e*math.Cos(nup*math.Pi/180.0))
 	fmt.Println(r)
 	Ne := 360.0 / 365.242191 * D / Te
+	Ne = normalizeAngle(Ne)
 	fmt.Println(Ne)
 }
 

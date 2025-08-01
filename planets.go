@@ -11,7 +11,7 @@ const oe = 103.2055
 const ee = 0.016671
 const ae = 0.999985
 
-func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i float64) {
+func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i, O float64) {
 	D := JulianDay(y, m, d) - JulianDay(2010, 1, 0.0)
 	Np := 360.0 / 365.242191 * D / Tp
 	Np = normalizeAngle(Np)
@@ -29,8 +29,9 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i float64) {
 	L = normalizeAngle(L)
 	R := ae * (1 - ee*ee) / (1 + ee*math.Cos(nue*math.Pi/180.0))
 	fmt.Println(R)
-	lp := nup + o
-	fmt.Println(lp)
+	Lp := nup + o
+	P := math.Asin(math.Sin((Lp-O)*math.Pi/180.0) * math.Sin(i*math.Pi/180.0))
+	fmt.Println(P)
 }
 
 func PlanetDistance() {

@@ -1,13 +1,17 @@
 package astronomy
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-func PlanetCoordinates(y, m int, d, Tp, ep, o float64) {
+func PlanetCoordinates(y, m int, d, Tp, ep, o, e float64) {
 	D := JulianDay(y, m, d) - JulianDay(2010, 1, 0.0)
 	Np := 360.0 / 365.242191 * D / Tp
 	Np = normalizeAngle(Np)
-	Mp := Np + ep + o
-	fmt.Println(Mp)
+	Mp := Np + ep - o
+	nup := Mp + 360.0/math.Pi*e*math.Sin(Mp)
+	fmt.Println(nup)
 }
 
 func PlanetDistance() {

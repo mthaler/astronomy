@@ -5,6 +5,8 @@ import (
 	"math"
 )
 
+const Te = 0.999996
+
 func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a float64) {
 	D := JulianDay(y, m, d) - JulianDay(2010, 1, 0.0)
 	Np := 360.0 / 365.242191 * D / Tp

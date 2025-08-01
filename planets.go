@@ -7,6 +7,7 @@ import (
 
 const Te = 0.999996
 const epe = 99.556772
+const oe = 103.2055
 const ee = 0.016671
 
 func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a float64) {
@@ -20,7 +21,9 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a float64) {
 	fmt.Println(r)
 	Ne := 360.0 / 365.242191 * D / Te
 	Ne = normalizeAngle(Ne)
-	fmt.Println(Ne)
+	Me := Ne + epe + oe
+	fmt.Println(Me)
+
 }
 
 func PlanetDistance() {

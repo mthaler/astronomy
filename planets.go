@@ -41,6 +41,10 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i, O float64) {
 }
 
 func PlanetPerturbation(y, m int, d float64) {
+	JD := JulianDay(y, m, d)
+	T := (JD - 2415020.0) / 36525.0
+	A := T/5.0 + 0.1
+	fmt.Println(A)
 
 }
 

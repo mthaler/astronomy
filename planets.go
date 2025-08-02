@@ -40,7 +40,7 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i, O float64) {
 	fmt.Println(R * math.Sin((l-Lp)*math.Pi/180.0) / (r2 - R*math.Cos((l-Lp)*math.Pi/180.0)))
 }
 
-func PlanetPerturbation() {
+func PlanetPerturbation(y, m int, d float64) {
 
 }
 

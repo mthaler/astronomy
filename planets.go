@@ -45,7 +45,8 @@ func PlanetPerturbation(y, m int, d float64) {
 	T := (JD - 2415020.0) / 36525.0
 	A := T/5.0 + 0.1
 	fmt.Println(A)
-
+	P := 237.47555 + 3034.9061*T
+	fmt.Println(P)
 }
 
 func PlanetDistance() {

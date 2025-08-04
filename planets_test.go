@@ -7,5 +7,5 @@ func TestPlanetCoordinates(t *testing.T) {
 }
 
 func TestPlanetPerturbation(t *testing.T) {
-	PlanetPerturbation(2003, 11, 22.0, 0.048907, 497.809764)
+	PlanetPerturbation(2003, 11, 22.0, 0.048907, 497.809764, 14.6633)
 }

@@ -40,7 +40,7 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i, O float64) {
 	fmt.Println(R * math.Sin((l-Lp)*math.Pi/180.0) / (r2 - R*math.Cos((l-Lp)*math.Pi/180.0)))
 }
 
-func PlanetPerturbation(y, m int, d, e, Mp float64) {
+func PlanetPerturbation(y, m int, d, e, Mp, o float64) {
 	JD := JulianDay(y, m, d)
 	T := (JD - 2415020.0) / 36525.0
 	A := T/5.0 + 0.1
@@ -52,9 +52,12 @@ func PlanetPerturbation(y, m int, d, e, Mp float64) {
 	fmt.Println(Dl)
 	E := kepler(Mp, e, Mp)
 	fmt.Println(E)
-	nu := Mp + 360.0/math.Pi*math.E*math.Sin(Mp*math.Pi/180.0)
+	nu := Mp + 360.0/math.Pi*e*math.Sin(Mp*math.Pi/180.0)
 	nu = normalizeAngle(nu)
 	fmt.Println(nu)
+	lp := nu + o
+	lp = normalizeAngle(lp)
+	fmt.Println(lp)
 }
 
 func PlanetDistance() {

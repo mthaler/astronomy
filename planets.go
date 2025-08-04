@@ -52,6 +52,9 @@ func PlanetPerturbation(y, m int, d, e, Mp float64) {
 	fmt.Println(Dl)
 	E := kepler(Mp, e, Mp)
 	fmt.Println(E)
+	nu := Mp + 360.0/math.Pi*math.E*math.Sin(Mp*math.Pi/180.0)
+	nu = normalizeAngle(nu)
+	fmt.Println(nu)
 }
 
 func PlanetDistance() {

@@ -34,7 +34,7 @@ func Nutation(y, m int, d float64) (float64, float64) {
 	return DP, De
 }
 
-func Aberration(ld, lm int, ls float64, bd, bm int, bs float64) (int, int, float64) {
+func Aberration(ld, lm int, ls float64, bd, bm int, bs float64) (int, int, float64, int, int, float64) {
 	l := DecimalDegrees(ld, lm, ls)
 	b := DecimalDegrees(bd, bm, bs)
 	solar_longtitude := 165.562250
@@ -44,7 +44,8 @@ func Aberration(ld, lm int, ls float64, bd, bm int, bs float64) (int, int, float
 	Db /= 3600.0
 	fmt.Println(Db)
 	ld2, lm2, ls2 := DecimalDegreesToDegreeHourMinute(l + Dl)
-	return ld2, lm2, ls2
+	bd2, bm2, bs2 := DecimalDegreesToDegreeHourMinute(b + Db)
+	return ld2, lm2, ls2, bd2, bm2, bs2
 }
 
 func Refraction(h, m int, s float64, dd, md int, sd float64) {

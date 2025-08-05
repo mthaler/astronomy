@@ -24,10 +24,13 @@ func TestNutation(t *testing.T) {
 }
 
 func TestAberration(t *testing.T) {
-	ld, lm, ls := Aberration(352, 37, 10.1, -1, 32, 56.4)
+	ld, lm, ls, bd, bm, bs := Aberration(352, 37, 10.1, -1, 32, 56.4)
 	assert.Equal(t, 352, ld)
 	assert.Equal(t, 37, lm)
 	assert.Equal(t, 30.45212807281132, ls)
+	assert.Equal(t, -1, bd)
+	assert.Equal(t, 32, bm)
+	assert.Equal(t, 56.3, bs)
 }
 
 func TestRefraction(t *testing.T) {

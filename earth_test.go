@@ -34,5 +34,11 @@ func TestAberration(t *testing.T) {
 }
 
 func TestRefraction(t *testing.T) {
-	Refraction(5, 51, 44.0, 23, 13, 10.0, 13, 1008)
+	hh, hm, hs, dd, dm, ds := Refraction(5, 51, 44.0, 23, 13, 10.0, 13, 1008)
+	assert.Equal(t, 5, hh)
+	assert.Equal(t, 51, hm)
+	assert.Equal(t, 36, int(math.Round(hs)))
+	assert.Equal(t, 23, dd)
+	assert.Equal(t, 15, dm)
+	assert.Equal(t, 14, int(math.Round(ds)))
 }

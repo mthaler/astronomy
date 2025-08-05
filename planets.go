@@ -36,6 +36,8 @@ func PlanetCoordinates(y, m int, d, Tp, ep, o, e, a, i, O float64) (int, int, fl
 	la := math.Atan(R*math.Sin((l-L)*math.Pi/180.0)/(r2-R*math.Cos((l-L)*math.Pi/180.0)))*180/math.Pi + l
 	la = normalizeAngle(la)
 	b := math.Atan(r2*math.Tan(P*math.Pi/180.0)*math.Sin((la-l)*math.Pi/180.0)) / (R * math.Sin((l-L)*math.Pi/180.0)) * 180 / math.Pi
+	// Right ascension (abbreviated RA; symbol α) is the angular distance of a particular point measured eastward along the celestial equator
+
 	ah, am, as := DecimalDegreesToDegreeHourMinute(la / 15.0)
 	dd, dm, ds := DecimalDegreesToDegreeHourMinute(b)
 	return ah, am, as, dd, dm, ds

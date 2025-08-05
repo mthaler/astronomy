@@ -12,8 +12,41 @@ const e = 0.016705
 /*
 D is the number of days since the epoch 2010.0
 */
-func sunLongitude(D float64) float64 {
-	l := 360.0/365.242191*D + 360.0/math.Pi*e*math.Sin((360.0/365.242191*D+eg+og)*math.Pi/180.0) + eg
+func sunLongitude(y, m, d int) float64 {
+	D := Days(m, d)
+	if y == 2010 {
+		D += 365
+	}
+	if y > 2010 {
+		for yy := y; yy < y; yy++ {
+			D += 365
+		}
+	}
+	if y < 2010 {
+		for yy := y; yy > y; yy-- {
+			D -= 365
+		}
+	}
+	if y >= 2010 {
+		for yy := y; yy > 2010; yy-- {
+			if IsLeapYear(yy) {
+				D += 366
+			} else {
+				D += 365
+			}
+		}
+	}
+	if y <= 2010 {
+		for yy := y; yy < 2010; yy++ {
+			if IsLeapYear(yy) {
+				D -= 366
+			} else {
+				D -= 365
+			}
+		}
+	}
+	l := 360.0/365.242191*float64(D) + 360.0/math.Pi*e*math.Sin((360.0/365.242191*float64(D)+eg+og)*math.Pi/180.0) + eg
+	l = normalizeAngle(l)
 	return l
 }
 

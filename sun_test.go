@@ -11,7 +11,7 @@ func TestHeliographic(t *testing.T) {
 }
 
 func TestSunLongitude(t *testing.T) {
-	assert.Equal(t, 272.751601885035, sunLongitude(0.0))
+	assert.Equal(t, 272.751601885035, sunLongitude(2010, 1, 1))
 }
 
 func TestCarringtonRotationNumber(t *testing.T) {

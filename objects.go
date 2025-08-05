@@ -27,7 +27,3 @@ func RisingSetting(ah, am int, as float64, dd, dm int, ds float64, y, m, d int, 
 	H /= 15.0
 	fmt.Println(H * 180.0 / math.Pi)
 }
-
-func Parallax() {
-
-}

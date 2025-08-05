@@ -13,10 +13,7 @@ const e = 0.016705
 D is the number of days since the epoch 2010.0
 */
 func sunLongitude(D float64) float64 {
-	fmt.Println(D)
-	l := 360.0/365.242191*D + 360.0/math.Pi*e*(360.0/365.242191*D+eg-og) + eg
-	l = normalizeAngle(l)
-	fmt.Println(l)
+	l := 360.0/365.242191*D + 360.0/math.Pi*e*math.Sin((360.0/365.242191*D+eg+og)*math.Pi/180.0) + eg
 	return l
 }
 

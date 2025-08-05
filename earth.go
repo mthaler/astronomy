@@ -66,6 +66,6 @@ func Refraction(h, m int, s float64, dd, md int, sd, T, P float64) (int, int, fl
 	return hh, hm, hs, dd2, dm, ds
 }
 
-func GeocentricParallax() {
+func Parallax(y, m int, d float64) {
 
 }

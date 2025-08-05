@@ -38,8 +38,10 @@ func Aberration(ld, lm int, ls float64, bd, bm int, bs float64) {
 	l := DecimalDegrees(ld, lm, ls)
 	b := DecimalDegrees(bd, bm, bs)
 	solar_longtitude := 165.562250
-	Dl := -20.5 * math.Cos(solar_longtitude-l) / math.Cos(b*math.Pi/180)
+	Dl := -20.5 * math.Cos((solar_longtitude-l)*math.Pi/180) / math.Cos(b*math.Pi/180)
 	fmt.Println(Dl)
+	Db := -20.5 * math.Sin((solar_longtitude-l)*math.Pi/180) * math.Sin(b*math.Pi/180)
+	fmt.Println(Db)
 }
 
 func Refraction(h, m int, s float64, dd, md int, sd float64) {

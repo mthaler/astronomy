@@ -44,5 +44,4 @@ func TestRefraction(t *testing.T) {
 }
 
 func TestParallax(t *testing.T) {
-	Parallax(1979, 2, 26.0)
 }

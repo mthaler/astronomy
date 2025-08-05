@@ -65,3 +65,7 @@ func Refraction(h, m int, s float64, dd, md int, sd, T, P float64) (int, int, fl
 	dd2, dm, ds := DecimalDegreesToDegreeHourMinute(a2)
 	return hh, hm, hs, dd2, dm, ds
 }
+
+func GeocentricParallax() {
+
+}

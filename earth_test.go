@@ -42,3 +42,7 @@ func TestRefraction(t *testing.T) {
 	assert.Equal(t, 15, dm)
 	assert.Equal(t, 14, int(math.Round(ds)))
 }
+
+func TestGeocentricParallax(t *testing.T) {
+	GeocentricParallax()
+}

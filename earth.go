@@ -16,7 +16,8 @@ func Precession(ah, am int, as float64, dd, dm int, ds float64) (int, int, float
 	ah2, am2, as2 := DecimalHourToHourMinuteSecond(a1)
 	S2 := 20.0426 * math.Cos(ad*math.Pi/180.0) * N
 	S2 /= 3600.0
-	dd2, dm2, ds2 := DecimalDegreesToDegreeHourMinute(S2)
+	d2 := d + S2
+	dd2, dm2, ds2 := DecimalDegreesToDegreeHourMinute(d2)
 	return ah2, am2, as2, dd2, dm2, ds2
 }
 

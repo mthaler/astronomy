@@ -48,7 +48,7 @@ func Aberration(ld, lm int, ls float64, bd, bm int, bs float64) (int, int, float
 	return ld2, lm2, ls2, bd2, bm2, bs2
 }
 
-func Refraction(h, m int, s float64, dd, md int, sd, P, T float64) {
+func Refraction(h, m int, s float64, dd, md int, sd, T, P float64) {
 	a := 19.334345
 	A := 283.271027
 	R := 0.0

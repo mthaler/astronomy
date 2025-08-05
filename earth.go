@@ -5,18 +5,19 @@ import (
 	"math"
 )
 
-func Precession(ah, am int, as float64, dd, dm int, ds float64) {
+func Precession(ah, am int, as float64, dd, dm int, ds float64) (int, int, float64) {
 	a := DecimalHour(ah, am, as)
 	d := DecimalDegrees(dd, dm, ds)
 	ad := a * 15.0
 	N := 29.5
 	S := (3.07327 + 1.33617*math.Sin(ad*math.Pi/180.0)*math.Tan(d*math.Pi/180.0)) * N
-	S = S / 3600.0
+	S /= 3600.0
 	a1 := S + a
 	h, m, s := DecimalHourToHourMinuteSecond(a1)
-	fmt.Println(h)
-	fmt.Println(m)
-	fmt.Println(s)
+	S2 := 20.0426 * math.Cos(ad*N*math.Pi/180.0) * N
+	S2 /= 3600.0
+	fmt.Println(S2)
+	return h, m, s
 }
 
 func Nutation(y, m int, d float64) (float64, float64) {

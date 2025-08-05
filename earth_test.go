@@ -1,13 +1,20 @@
 package astronomy
 
 import (
+	"math"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
 func TestPrecession(t *testing.T) {
-	Precession(9, 10, 43.0, 14, 23, 25.0)
+	ah, am, as, dd, dm, ds := Precession(9, 10, 43.0, 14, 23, 25.0)
+	assert.Equal(t, 9, ah)
+	assert.Equal(t, 12, am)
+	assert.Equal(t, 20, int(math.Round(as)))
+	assert.Equal(t, 14, dd)
+	assert.Equal(t, 16, dm)
+	assert.Equal(t, 8, int(math.Round(ds)))
 }
 
 func TestNutation(t *testing.T) {

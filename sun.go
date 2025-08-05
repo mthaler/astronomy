@@ -20,14 +20,17 @@ func sunLongitude(D float64) float64 {
 	return l
 }
 
+func Heliographic(y, m int, d float64) {
+	JD := JulianDay(y, m, d)
+	T := (JD - 2415020) / 36525
+	D := 84 * T / 60.0
+	fmt.Println(D)
+}
+
 func CarringtonRotationNumber(y, m int, d float64) int {
 	JD := JulianDay(y, m, d)
 	CRN := math.Round(1690.0 + (JD-2444235.34)/27.2753)
 	return int(CRN)
-}
-
-func Heliographic(d, h int, m float64) {
-
 }
 
 func SunOrbit() {

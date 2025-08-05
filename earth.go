@@ -48,14 +48,19 @@ func Aberration(ld, lm int, ls float64, bd, bm int, bs float64) (int, int, float
 	return ld2, lm2, ls2, bd2, bm2, bs2
 }
 
-func Refraction(h, m int, s float64, dd, md int, sd, T, P float64) {
+func Refraction(h, m int, s float64, dd, md int, sd, T, P float64) (int, int, float64, int, int, float64) {
 	a := 19.334345
 	A := 283.271027
+	z := 70.665655
 	R := 0.0
 	if a > 15.0 {
-		R = 0.00452
+		R = 0.00452 * P * math.Tan(z) / (273.0 + T)
 	} else {
-		R = 0.0
+		R = P * (0.1594 + 0.0196*a + 0.00002*a*a) / ((273.0 + T) * (1 + 0.505*a + 0.0845*a*a))
+
 	}
-	fmt.Println(R)
+	a2 := a + R
+	hh, hm, hs := DecimalDegreesToDegreeHourMinute(A)
+	dd2, dm, ds := DecimalDegreesToDegreeHourMinute(a2)
+	return hh, hm, hs, dd2, dm, ds
 }
